@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{{ with .Site.LanguageCode }}<html lang="{{ . }}">{{ else }}<html>{{ end }}
+<head>
+
+  {{ partial "head.html" . }}
+
+</head>
+<body id="body">
+
+
+{{ partial "foot.html" . }}
+</body>
+</html>

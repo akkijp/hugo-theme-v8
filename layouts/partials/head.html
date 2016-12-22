@@ -1,0 +1,32 @@
+<meta charset="utf-8">
+
+<title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+
+{{ if .Params.noindex }}<meta name="robots" content="noindex">{{ end }}
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme" content="hugo-coffeehouse">
+<meta name="theme-color" content="#FFAA00">
+<meta name="robots" content="noarchive">
+<!-- サイトの正式なURLを伝えるmetaタグ -->
+<meta name="Identifier-URL" content="{{ .Site.BaseURL }}" />
+{{ .Hugo.Generator }}
+{{ with .Description }}<meta name="description" content="{{ . }}">{{ end }}
+{{ with .Keywords }}<meta name="keywords" content="{{ . }}">{{ end }}
+{{ with .Site.Params.Author }}<meta name="author" content="{{ . }}">{{ end }}
+
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="{{ .Site.Title }}">
+<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.ico">
+<link rel="apple-touch-icon-precomposed" href="/favicon-152.png">
+
+
+{{ template "_internal/schema.html" . }}
+{{ template "_internal/opengraph.html" . }}
+{{ template "_internal/google_news.html" . }}
+{{ template "_internal/twitter_cards.html" . }}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.slim.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{{ .Site.BaseURL }}/assets/css/main.css">

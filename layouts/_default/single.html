@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{{ with .Site.LanguageCode }}<html lang="{{ . }}">{{ else }}<html>{{ end }}
+<head>
+
+  {{ partial "head.html" . }}
+
+</head>
+<body id="body">
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">{{ .Title }}</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 02, 2006" }}</time></span>
+			<section itemprop="entry-text">
+				<div class="markdown-body">
+					{{ .Content }}
+				</div>
+		</article>
+	</main>
+
+{{ partial "foot.html" . }}
+</body>
+</html>

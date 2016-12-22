@@ -1,0 +1,24 @@
+<!-- Twitter 埋め込み用スクリプト 非同期読み込み -->
+<script>
+var cb = function() {
+  var l=document.createElement('script');
+  l.id="twitter-wjs";
+  l.async = 1;
+  l.src="//platform.twitter.com/widgets.js";
+  l.charset="utf-8";
+  document.body.appendChild(l);
+}
+var tt = document.getElementsByClassName( "twitter-tweet" );
+if(tt.length){
+  var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+      webkitRequestAnimationFrame || msRequestAnimationFrame;
+  if (raf) raf(cb);
+  else window.addEventListener('load', cb);
+}
+</script>
+<!-- Twitter 埋め込み用スクリプト 非同期読み込み -->
+
+
+{{ "<!--" | safeHTML }}
+Create from: {{ .Site.BaseURL }} @ {{ if .Hugo.BuildDate }}{{ .Hugo.BuildDate }}{{ else }}{{ .Now.Format "2006-01-02 15:04:05" }}{{ end }} by Hugo
+{{ "-->" | safeHTML }}

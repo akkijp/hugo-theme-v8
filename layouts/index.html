@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{{ with .Site.LanguageCode }}<html lang="{{ . }}">{{ else }}<html>{{ end }}
+<head>
+
+  {{ partial "head.html" . }}
+
+</head>
+<body id="body">
+
+  {{ partial "header.html" . }}
+
+  <div class="ly_main-container-outer">
+    <div class="ly_main-container-inner">
+      <div class="row">
+
+        <div class="eight columns">
+          <main role="main">
+            {{ range (where .Data.Pages ".Params.hidefromhome" "!=" "true") }}
+        		<article itemscope itemtype="http://schema.org/Blog">
+        			<h2 class="entry-title" itemprop="headline"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        			<span class="entry-meta"><time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 02, 2006" }}</time></span>
+        		</article>
+            {{ end }}
+        	</main>
+        </div>
+        <div class="four columns">
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+{{ partial "footer.html" . }}
+{{ partial "foot.html" . }}
+</body>
+</html>
