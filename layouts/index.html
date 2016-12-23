@@ -13,7 +13,7 @@
     <div class="ly_main-container-inner">
       <div class="row">
 
-        <div class="eight columns">
+        <div class="eight columns" style="height: 3000px;">
           <main role="main">
             {{ range (where .Data.Pages ".Params.hidefromhome" "!=" "true") }}
         		<article itemscope itemtype="http://schema.org/Blog">
@@ -30,6 +30,7 @@
     </div>
   </div>
 
+{{ partial "to-top-btn.html" . }}
 {{ partial "footer.html" . }}
 {{ partial "foot.html" . }}
 </body>

@@ -1,26 +1,47 @@
 <header class="ly_header">
   <div class="ly_header-title"><a href="" href="{{ .Site.BaseURL }}">{{ .Site.Title }}></a></div>
-  <nav class="ly_header-nav">
-    <ul class="nav navbar-nav navbar-right">
-      {{ range .Site.Menus.main.ByWeight }}
-        {{ if .HasChildren }}
-          <li class="navlinks-container">
-            <a class="navlinks-parent" href="javascript:void(0)">{{ .Name }}</a>
-            <div class="navlinks-children">
-            {{ range .Children }}
-              <a href="{{ .URL }}">{{ .Name }}</a>
-            {{ end }}
-            </div>
+  <div class="ly_header-nav">
+    <nav class="p-navbar">
+      <ul class="p-navbar--list">
+        {{ range .Site.Menus.main.ByWeight }}
+          <li class="p-navbar--list-item">
+            <a title="{{ .Name }}" href="{{ .URL }}">{{ .Name }}</a>
           </li>
-        {{ else }}
-          <li>
-          <a title="{{ .Name }}" href="{{ .URL }}">{{ .Name }}</a>
-  	      </li>
-  	    {{ end }}
-      {{ end }}
-      </ul>
-  </nav>
+        {{ end }}
+        </ul>
+    </nav>
+  </div>
 </header>
+
+
+
+<!-- <header class="ly_header">
+  <div class="ly_header-title"><a href="" href="{{ .Site.BaseURL }}">{{ .Site.Title }}></a></div>
+  <div class="ly_header-nav">
+    <nav class="p-navbar">
+      <ul class="p-navbar--list">
+        {{ range .Site.Menus.main.ByWeight }}
+          {{ if .HasChildren }}
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">{{ .Name }}</a>
+              <div class="navlinks-children">
+              {{ range .Children }}
+                <a href="{{ .URL }}">{{ .Name }}</a>
+              {{ end }}
+              </div>
+            </li>
+          {{ else }}
+            <li class="p-navbar--list-item">
+            <a title="{{ .Name }}" href="{{ .URL }}">{{ .Name }}</a>
+    	      </li>
+    	    {{ end }}
+        {{ end }}
+        </ul>
+    </nav>
+  </div>
+</header> -->
+
+
 
 
 <style>

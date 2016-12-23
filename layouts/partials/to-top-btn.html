@@ -1,0 +1,45 @@
+<div id="to-top-btn" class="hidden">
+  <a href="#"><img src="/imgs/m_e_others_418.png" alt=""></a>
+</div>
+
+<style>
+  @keyframes fadeIn{
+    from{opacity: 0;}
+    to{opacity: 1;}
+  }
+  @keyframes fadeOut{
+    from{opacity: 1;}
+    to{opacity: 0;}
+  }
+  #to-top-btn{
+    width: 45px;
+    height: 45px;
+    position: fixed;
+    right: 25px;
+    bottom: 30px;
+    display: block;
+    box-sizing: border-box;
+    animation: fadeIn .4s linear 0s;
+  }
+  #to-top-btn img{max-width: 100%;}
+  #to-top-btn.hidden{
+    animation: fadeOut .4s linear 0s;
+  }
+</style>
+
+<script>
+$(document).ready(function() {
+  var $pagetop = $('#to-top-btn');
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 800) {
+      $pagetop.removeClass('hidden');
+    } else {
+      $pagetop.addClass('hidden');
+    }
+  });
+  $pagetop.click(function () {
+    $('body, html').animate({ scrollTop: 0 }, 500);
+    return false;
+  });
+});
+</script>

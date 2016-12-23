@@ -18,6 +18,12 @@ if(tt.length){
 </script>
 <!-- Twitter 埋め込み用スクリプト 非同期読み込み -->
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/bash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/go.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/css.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/javascript.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 
 {{ "<!--" | safeHTML }}
 Create from: {{ .Site.BaseURL }} @ {{ if .Hugo.BuildDate }}{{ .Hugo.BuildDate }}{{ else }}{{ .Now.Format "2006-01-02 15:04:05" }}{{ end }} by Hugo
