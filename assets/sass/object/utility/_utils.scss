@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+.cf, .clearfix{
+  @extend %clearfix;
+}
+
+.fr{float: right !important;}
+.fl{float: left !important;}
+.center{
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.tr{text-align: right !important;}
+.tl{text-align: left !important;}
+.tc{text-align: center !important;}

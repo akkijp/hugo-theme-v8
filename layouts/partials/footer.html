@@ -1,12 +1,32 @@
-<footer class="ly_footer" role="contentinfo">
-  <div class="container">
-    <p class=ly_code_with_love>code with <i class="fa fa-heart"></i></p>
-    <p class="ly_footer__copy">
-    © {{ .Now.Format "2006" }} hackerslog.net All rights reserved.
-    powered by the <a href="http://gohugo.io" target="_blank">Hugo</a>.
-    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ja" target="_blank">
-      <img src="/imgs/by-nc-nd.png" alt="CC BY-NC-ND 4.0" width="80" height="28">
-    </a>
-    </p>
+<footer class="ly__footer" role="contentinfo">
+  <div class="ly__footer--inner">
+
+    <div class="ly__footer--left">
+      <div class="footer__logo">{{ .Title }}</div>
+      {{ if .Site.Menus.main.ByWeight }}
+        <ul class="footer__nav">
+        {{ range .Site.Menus.main.ByWeight }}
+          {{ $link := . }}
+          <li class="footer__nav--item"><a href="{{ $link.URL }}">{{ $link.Name }}</a></li>
+        {{ end }}
+        </ul>
+      {{ end }}
+    </div>
+    <div class="ly__footer--right">
+
+      <p class=footer__code_with_love>code with <i class="fa fa-heart"></i></p>
+      <p class="footer__copy">
+        {{ $url := (replaceRE "^https?://([^/:]+).*(:[0-9]+)?/?$" "$1" .Site.BaseURL) }}
+        © {{ .Now.Format "2006" }} {{ $url }} All rights reserved.
+        Powered by the <a href="http://gohugo.io" target="_blank">Hugo</a>.
+      </p>
+      <p class="footer__by-nc-nd">
+        <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ja" target="_blank">
+          <img src="/imgs/by-nc-nd.png" alt="CC BY-NC-ND 4.0" width="80" height="28">
+        </a>
+      </p>
+
+    </div>
+
   </div>
 </footer>

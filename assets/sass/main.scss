@@ -3,4 +3,12 @@
 
 @import "foundation/base/_base";
 @import "foundation/mixin/_clearfix";
+@import "foundation/mixin/_normalize";
+@import "foundation/mixin/_reset";
+
+@import "layout/_footer";
+@import "layout/_header";
+@import "layout/_header-nav";
+@import "layout/_main-container";
+@import "object/utility/_utils";
 @import "_custom";
