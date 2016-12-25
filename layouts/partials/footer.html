@@ -2,7 +2,7 @@
   <div class="ly__footer--inner">
 
     <div class="ly__footer--left">
-      <div class="footer__logo">{{ .Title }}</div>
+      <div class="footer__logo">{{ .Site.Title }}</div>
       {{ if .Site.Menus.main.ByWeight }}
         <ul class="footer__nav">
         {{ range .Site.Menus.main.ByWeight }}
