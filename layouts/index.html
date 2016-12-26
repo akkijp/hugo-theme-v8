@@ -16,7 +16,7 @@
 
       <div class="row">
 
-        <div class="col-md-8">
+        <div class="col-sm-7 col-md-8">
           <div class="eight columns" style="height: 3000px;">
             <main role="main">
               {{ range (where .Data.Pages ".Params.hidefromhome" "!=" "true") }}
@@ -30,7 +30,7 @@
 
         </div>
 
-        <div class="col-md-4">
+        <div class="col-sm-5 col-md-4">
           {{ partial "side_nav.html" . }}
         </div>
 
