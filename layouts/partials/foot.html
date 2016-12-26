@@ -25,6 +25,9 @@ if(tt.length){
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/javascript.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
+{{ partial "plugin/script.html" . }}
+{{ partial "plugin/style.html" . }}
+
 {{ "<!--" | safeHTML }}
 Create from: {{ .Site.BaseURL }} @ {{ if .Hugo.BuildDate }}{{ .Hugo.BuildDate }}{{ else }}{{ .Now.Format "2006-01-02 15:04:05" }}{{ end }} by Hugo
 {{ "-->" | safeHTML }}

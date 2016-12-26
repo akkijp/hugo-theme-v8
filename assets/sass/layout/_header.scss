@@ -1,14 +1,16 @@
 @charset "utf-8";
 
-
-.ly__header{
-  padding: 25px 0;
-  background-color: #26a69a;
-
-  .ly__header-title{
-
+.layout__header{
+  margin-top: 50px;
+  position: relative;
+  .header-title{
+    position: absolute;
+    margin: 0;
+    padding: 0;
   }
-  .ly__header-nav{
-
+  .header-subtitle{
+    position: absolute;
+    margin: 0;
+    padding: 0;
   }
 }

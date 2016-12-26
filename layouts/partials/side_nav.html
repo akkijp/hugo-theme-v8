@@ -1,0 +1,162 @@
+<aside class="ly_sidebar" role="complementary">
+
+  <div class="p-sidebar-common">
+
+    {{ with .Site.Params.search.search }}
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class="c-gsc-control">
+          <h2><i class="fa fa-search" aria-hidden="true"></i> サイト内 Google検索</h2>
+          <div>
+            {{ partial . }}
+            <p class="powered_by_google">powered by Google</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    {{ end }}
+
+
+
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class="p-author">
+          <h2><i class="fa fa-user" aria-hidden="true"></i></span>Author</h2>
+
+          <div class="p-author__avatar">
+
+            <a title="{{ .Site.Title }}" href="{{ .Site.BaseURL }}">
+              {{ if .Site.Params.AuthorLogo }}
+                <img class="p-author__avatar-img" src="{{ .Site.Params.AuthorLogo }}" alt="{{ .Site.Title }}" />
+              {{ else }}
+                <img class="p-author__avatar-img" src="/imgs/logo.png" alt="{{ .Site.Title }}" />
+              {{ end }}
+            </a>
+
+
+
+        	</div>
+
+          <div class="p-author__self">
+            {{ with .Site.Params.Author }}<p>{{ . | safeHTML }}</p>{{ end }}
+            <div class="p-author__self--sns">
+              {{ with .Site.Params.email }}<p class="p-author__self--sns--item"><a href="mailto:{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i>Email</a></p>{{ end }}
+              {{ with .Site.Params.facebook }}<p class="p-author__self--sns--item"><a href="{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i>Facebook</a></p>{{ end }}
+              {{ with .Site.Params.twitter }}<p class="p-author__self--sns--item"><a href="{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i>Twitter</a></p>{{ end }}
+        			{{ with .Site.Params.github }}<p class="p-author__self--sns--item"><a href="{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-github fa-lg" aria-hidden="true"></i>GitHub</a></p>{{ end }}
+              {{ with .Site.Params.instagram }}<p class="p-author__self--sns--item"><a href="{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i>Instagram</a></p>{{ end }}
+            </div>
+            {{ with .Site.Params.AuthorDetail }}<div>{{ . | safeHTML }}</div>{{ end }}
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    {{ if ne (replaceRE "^https?://([^/:]+).*(:[0-9]+)?/?$" "$1" .Site.BaseURL) "localhost" }}
+    {{ with .Site.Params.adsense.sidebar }}
+    <div class="row">
+
+      <div class="col-md-12">
+        <div class="c-sponsored-links">
+          <h2><span>スポンサーリンク</span></h2>
+          {{ partial . }}
+        </div>
+      </div>
+
+    </div>
+    {{ end }}
+    {{ end }}
+
+
+    <hr>
+
+    <div class="row">
+      <div id="hatena-bookmark-ranking" class="col-md-12">
+        <script language="javascript" type="text/javascript" src="/hatena/js/widget-custom/v1/main.js" charset="utf-8"></script>
+        <script language="javascript" type="text/javascript">
+          Hatena.BookmarkWidget.url   = "{{ .Site.BaseURL }}";
+          Hatena.BookmarkWidget.title = "人気記事ランキング";
+          Hatena.BookmarkWidget.sort  = "count";
+          Hatena.BookmarkWidget.width = 0;
+          Hatena.BookmarkWidget.num   = 6;
+          Hatena.BookmarkWidget.theme = "notheme";
+          Hatena.BookmarkWidget.load();
+        </script>
+      </div>
+    </div>
+
+
+
+    <div class="row">
+
+      <div class="col-md-12">
+        <h2><i class="fa fa-paper-plane-o" aria-hidden="true"></i>最新記事</h2>
+        <div class="panel panel-default">
+          <div class="list-group">
+            {{ range first 6 (where .Site.Pages "Type" "post") }}
+            <div class="list-group-item">
+              <a href="{{ .Permalink }}">{{ .Title }}</a>
+              <a href="http://b.hatena.ne.jp/entry/{{ .Permalink | safeHTML }}">
+               <img src="https://b.hatena.ne.jp/entry/image/{{ .Permalink | safeHTML }}" alt="はてなブックマーク - {{ .Title }}" title="はてなブックマーク - {{ .Title }}">
+              </a>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <div class="row">
+
+      <div class="col-md-12">
+        <!-- (where .Data.Pages "Type" "posts") -->
+        {{ range $key, $value := .Site.Taxonomies }}
+        <div>
+          <h2><i class="fa fa-paper-plane-o" aria-hidden="true"></i>{{ $key | singularize }}</h2>
+        </div>
+        <div class="panel panel-default">
+          <div class="list-group">
+            {{ range first 6 $value.ByCount }}
+            <a href="{{ $.Site.BaseURL}}{{ $key }}/{{ .Name | urlize }}" class="list-group-item">{{ .Name }}</a>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+      </div>
+
+    </div>
+
+
+    {{ with .Site.Params.Apps }}
+    {{ $apps := . }}
+    <div class="row">
+      <div class="col-md-12">
+        <div class="p-webapp-view">
+          <h2><i class="fa fa-cog" aria-hidden="true"></i>自作Webサービス</h2>
+          <ul class="p-webapp-view__list">
+            {{ range $apps }}
+            {{ $app := . }}
+            <li class="p-webapp-view__listitem">
+              <p><a href="{{ $app.url }}">{{ $app.name }}</a></p>
+              <div>
+                {{ $app.description | safeHTML }}
+              </div>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+
+  </div>
+
+</aside>

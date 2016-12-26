@@ -7,14 +7,16 @@
 </head>
 <body id="body">
 
+  {{ partial "header.html" . }}
   {{ partial "header-nav.html" . }}
 
-  <div class="ly_main-container-outer">
-    <div class="ly_main-container-inner">
+  <div class="layout__main-container-outer">
+    <div class="layout__main-container-inner">
 
-      <div class="layout__container">
-        <div class="layout__container--left">
 
+      <div class="row">
+
+        <div class="col-md-8">
           <div class="eight columns" style="height: 3000px;">
             <main role="main">
               {{ range (where .Data.Pages ".Params.hidefromhome" "!=" "true") }}
@@ -27,10 +29,14 @@
           </div>
 
         </div>
-        <div class="layout__container--right">
 
+        <div class="col-md-4">
+          {{ partial "side_nav.html" . }}
         </div>
+
       </div>
+
+
     </div>
   </div>
 

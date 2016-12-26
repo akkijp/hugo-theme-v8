@@ -1,0 +1,82 @@
+@charset "utf-8";
+
+.c-gsc-control{
+
+
+  .gsc-control-searchbox-only {
+    table tr {
+      td {
+        margin: 0;
+        padding: 0;
+        border: none;
+        text-align: left;
+      }
+      border: none;
+    }
+    form.gsc-search-box {
+      margin: 0;
+      padding: 0;
+      border: 1px solid #D9D9D9;
+      border-radius: 5px;
+      padding: 0 2px;
+    }
+    table.gsc-search-box {
+      margin: 0;
+      padding: 0;
+      border-collapse: separate;
+    }
+    .gsc-search-box {
+      .gsc-input {
+        margin: 0;
+        padding: 0;
+        font-size: 110%;
+      }
+      .gsc-input-box {
+        margin: 3px;
+        padding: 2px;
+        height: 100%;
+        border: none;
+        box-shadow: none;
+        .gstl_50 {
+          width: 99% !important;
+          margin-left: 1% !important;
+        }
+        .gsib_a {
+          padding: 2px;
+          input.gsc-input {
+            background-image: url(/imgs/google_custom_search.png) !important;
+            background-size: contain !important;
+            background-repeat: no-repeat !important;
+            background-position: left center !important;
+            background-color: #fff !important;
+            &:focus {
+              background-image: none !important;
+            }
+          }
+        }
+        .gsib_b {
+          .gsst_a, .gsst_b {
+            margin: 0;
+            padding: 0;
+            line-height: 0;
+          }
+        }
+      }
+      .gsc-search-button {
+        margin: 0;
+        padding: 0;
+        display: none;
+      }
+    }
+  }
+
+  .powered_by_google{
+    text-align: right;
+    font-size: 10px;
+    margin: 0;
+    line-height: 1;
+    color: #677883;
+  }
+
+
+}
