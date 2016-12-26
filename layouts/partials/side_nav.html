@@ -26,31 +26,30 @@
         <div class="p-author">
           <h2><i class="fa fa-user" aria-hidden="true"></i></span>Author</h2>
 
-          <div class="p-author__avatar">
+          <address>
+            <div class="p-author__avatar">
+              <a title="{{ .Site.Title }}" href="{{ .Site.BaseURL }}">
+                {{ if .Site.Params.AuthorLogo }}
+                  <img class="p-author__avatar-img" src="{{ .Site.Params.AuthorLogo }}" alt="{{ .Site.Title }}" />
+                {{ else }}
+                  <img class="p-author__avatar-img" src="/imgs/logo.png" alt="{{ .Site.Title }}" />
+                {{ end }}
+              </a>
+          	</div>
 
-            <a title="{{ .Site.Title }}" href="{{ .Site.BaseURL }}">
-              {{ if .Site.Params.AuthorLogo }}
-                <img class="p-author__avatar-img" src="{{ .Site.Params.AuthorLogo }}" alt="{{ .Site.Title }}" />
-              {{ else }}
-                <img class="p-author__avatar-img" src="/imgs/logo.png" alt="{{ .Site.Title }}" />
-              {{ end }}
-            </a>
-
-
-
-        	</div>
-
-          <div class="p-author__self">
-            {{ with .Site.Params.Author }}<p>{{ . | safeHTML }}</p>{{ end }}
-            <div class="p-author__self--sns">
-              {{ with .Site.Params.email }}<p class="p-author__self--sns--item"><a href="mailto:{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i>Email</a></p>{{ end }}
-              {{ with .Site.Params.facebook }}<p class="p-author__self--sns--item"><a href="{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i>Facebook</a></p>{{ end }}
-              {{ with .Site.Params.twitter }}<p class="p-author__self--sns--item"><a href="{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i>Twitter</a></p>{{ end }}
-        			{{ with .Site.Params.github }}<p class="p-author__self--sns--item"><a href="{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-github fa-lg" aria-hidden="true"></i>GitHub</a></p>{{ end }}
-              {{ with .Site.Params.instagram }}<p class="p-author__self--sns--item"><a href="{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i>Instagram</a></p>{{ end }}
+            <div class="p-author__self">
+              {{ with .Site.Params.Author }}<p>{{ . | safeHTML }}</p>{{ end }}
+              <div class="p-author__self--sns">
+                {{ with .Site.Params.email }}<p class="p-author__self--sns--item"><a href="mailto:{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i>Email</a></p>{{ end }}
+                {{ with .Site.Params.facebook }}<p class="p-author__self--sns--item"><a href="{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i>Facebook</a></p>{{ end }}
+                {{ with .Site.Params.twitter }}<p class="p-author__self--sns--item"><a href="{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i>Twitter</a></p>{{ end }}
+          			{{ with .Site.Params.github }}<p class="p-author__self--sns--item"><a href="{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-github fa-lg" aria-hidden="true"></i>GitHub</a></p>{{ end }}
+                {{ with .Site.Params.instagram }}<p class="p-author__self--sns--item"><a href="{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i>Instagram</a></p>{{ end }}
+              </div>
+              {{ with .Site.Params.AuthorDetail }}<div>{{ . | safeHTML }}</div>{{ end }}
             </div>
-            {{ with .Site.Params.AuthorDetail }}<div>{{ . | safeHTML }}</div>{{ end }}
-          </div>
+          </address>
+
         </div>
 
       </div>
