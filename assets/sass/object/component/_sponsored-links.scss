@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+// .bl_gadlink{
+.c-sponsored-links{
+  @extend %reset;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}

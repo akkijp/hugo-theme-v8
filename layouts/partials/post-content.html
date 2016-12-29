@@ -1,1 +1,114 @@
-{{ .Content }}
+<div class="p-content-header">
+  <a class="p-content-header__title-link" href="{{ .Permalink }}">
+    <h1 class="p-content-header__title" >{{ .Title }}</h1>
+  </a>
+
+  {{ if .Params.subtitle }}
+  <h3>
+    {{ .Params.subtitle }}
+  </h3>
+  {{ end }}
+
+  <div class="clearfix">
+
+    <div class="mb5">
+      <span>
+        <i class="fa fa-calendar"></i>
+        <time datetime="{{ .Date }}" itemprop="datePublished" pubdate="pubdate">{{ .Date.Format "2006-01-02" }}</time>
+      </span>
+      {{ with .Params.updated_at }}
+      <span style="margin-left:18px">
+        <i class="fa fa-refresh" aria-hidden="true"></i>
+        <time itemprop="dateModified" datetime="{{ . }}">{{ . | dateFormat "2006-01-02" }}</time>
+      </span>
+      {{ end }}
+    </div>
+
+    {{ if isset .Params "tags" }}
+    {{ $tagsLen := len .Params.tags }}
+    {{ if gt $tagsLen 0 }}
+    <div class="mb5">
+      <i class="fa fa-tags"></i>
+      {{ range $k, $v := .Params.tags }}
+      <a class="p-content-header__link" href="{{ $.Site.BaseURL }}tags/{{ . | urlize | lower }}">{{ . }}</a>
+      {{ end }}
+    </div>
+    {{ end }}
+    {{ end }}
+
+    {{ if isset .Params "categories" }}
+    {{ $categoriesLen := len .Params.categories }}
+    {{ if gt $categoriesLen 0 }}
+    <div class="mb5">
+      <i class="fa fa-folder"></i>
+      {{ range $k, $v := .Params.categories }}
+      <a class="p-content-header__link" href="{{ $.Site.BaseURL }}categories/{{ . | urlize | lower }}">{{ . }}</a>
+      {{ end }}
+    </div>
+    {{ end }}
+    {{ end }}
+
+  </div>
+
+</div>
+
+
+{{ partial "parts/share.html" . }}
+
+
+<hr>
+
+
+<section class="p-single-content js-single-content">
+
+  {{ with .Params.mainvisual }}
+  <div class="mb20">
+    <img itemprop="image" src="{{ . }}" alt="mainvisual">
+  </div>
+  {{ end }}
+
+
+  {{ $splitedContent := split .Content "<!-- table of contents -->" }}
+  {{ $len := len $splitedContent }}
+
+  {{ if ne $len 1}}
+    {{ index $splitedContent 0 | safeHTML }}
+  {{ end }}
+
+  <div class="c-table-of-contents">
+    <p class="c-table-of-contents--title">目次</p>
+    {{ .TableOfContents }}
+  </div>
+
+  {{ $hostname := replaceRE "^https?://([^/:]+).*(:[0-9]+)?/?$" "$1" .Site.BaseURL }}
+  {{ if ne $hostname "localhost" }}
+  {{ with .Site.Params.adsense.contentTop }}
+  <div class="c-sponsored-links mt20 mb20">
+    <p>スポンサーリンク</p>
+    {{ partial . }}
+  </div>
+  {{ end }}
+  {{ end }}
+
+  {{ if eq $len 1 }}
+    {{ .Content }}
+  {{ else }}
+    {{ index $splitedContent 1 | safeHTML }}
+  {{ end }}
+
+  {{ if ne $hostname "localhost" }}
+  {{ with .Site.Params.adsense.contentBottom }}
+  <div class="c-sponsored-links mt20 mb20">
+    <p>スポンサーリンク</p>
+    {{ partial . }}
+  </div>
+  {{ end }}
+  {{ end }}
+
+</section>
+
+
+{{ partial "parts/pager.html" . }}
+{{ partial "parts/share.html" . }}
+{{ partial "parts/disqus.html" . }}
+{{ partial "parts/related-article.html" . }}

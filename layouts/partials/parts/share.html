@@ -1,0 +1,98 @@
+<!-- <ul>
+  <li>{{ .Title }}</li>
+  <li>{{ .URL }}</li>
+  <li>{{.Description}}</li>
+  <li>{{.Permalink}}</li>
+  <li>{{.Site.BaseURL}}</li>
+  <li>{{.Site.Title}}</li>
+  <li>{{.RelPermalink}}</li>
+</ul> -->
+
+
+<nav class="ly_share">
+  <span class="ly_share--text">シェアする</span>
+  <ul class="ly_share--btn">
+    <!--はてなブックマーク-->
+    <li class="ly_share--btn__item">
+      <div class="c-sharebtn">
+        <div class="c-sharebtn__hatebu">
+          <a class="hatena-bookmark-button"
+            href="http://b.hatena.ne.jp/entry/{{ .Permalink | safeHTML }}"
+            class="hatena-bookmark-button"
+            target="_blank"
+            data-hatena-bookmark-title="{{ .Title | safeHTML }}"
+            data-hatena-bookmark-layout="simple"
+            data-hatena-bookmark-initialized="1"
+            title="このエントリーをはてなブックマークに追加">
+              <i class="fa fa-hatebu" aria-hidden="true"></i>
+              <span class="c-sharebtn__count js-sharebtn-count-hatebu"><i class="fa fa-spinner rotate" aria-hidden="true"></i></span>
+              <span class="c-sharebtn__text">Bookmark</span>
+            </a>
+        </div>
+      </div>
+    </li>
+    <!--Facebook-->
+    <li class="ly_share--btn__item">
+      <div class="c-sharebtn">
+        <a class="c-sharebtn__facebook"
+        href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink | safeHTML }}&amp;t={{ .Title | safeHTML }}"
+        onclick="window.open(this.href,'FaceBookWindow','width=650,height=450,menubar=no,toolbar=no,scrollbars=yes');return false;"
+        title="Facebookでシェア"
+        target="_blank">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+          <span class="c-sharebtn__count js-sharebtn-count-facebook"><i class="fa fa-spinner rotate" aria-hidden="true"></i></span>
+          <span class="c-sharebtn__text">Facebook</span>
+        </a>
+      </div>
+    </li>
+    <!--Twitter-->
+    <li class="ly_share--btn__item">
+      <div class="c-sharebtn">
+        <a class="c-sharebtn__twitter"
+        href="http://twitter.com/share?url={{ .Permalink | safeURL }}&amp;text={{ .Title | safeHTML }}&amp;hashtags=hackerslog&amp;via=k4zzk"
+        onclick="window.open(this.href, 'TwitterWindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+        target="_blank">
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+          <span class="c-sharebtn__count js-sharebtn-count-twitter"><i class="fa fa-spinner rotate" aria-hidden="true"></i></span>
+          <span class="c-sharebtn__text">Twitter</span>
+        </a>
+      </div>
+    </li>
+  </ul>
+  <ul class="ly_share--btn">
+    <!--Google+-->
+    <li class="ly_share--btn__item">
+      <div class="c-sharebtn">
+        <a class="c-sharebtn__google"
+        href="https://plus.google.com/share?url={{ .Permalink | safeHTML }}"
+        onclick="window.open(this.href, 'GooglePlusWindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"
+        target="_blank">
+          <i class="fa fa-google-plus" aria-hidden="true"></i>
+          <span class="c-sharebtn__text">Google+</span>
+        </a>
+      </div>
+    </li>
+    <!--Pocket-->
+    <li class="ly_share--btn__item">
+      <div class="c-sharebtn">
+        <a class="c-sharebtn__pocket"
+        href="https://getpocket.com/edit?url={{ .Permalink | safeHTML }}"
+        target="_blank">
+          <i class="fa fa-get-pocket" aria-hidden="true"></i>
+          <span class="c-sharebtn__text">Pocket</span>
+        </a>
+      </div>
+    </li>
+    <!--Feedly-->
+    <li class="ly_share--btn__item">
+      <div class="c-sharebtn">
+        <a class="c-sharebtn__feedly"
+        href="http://cloud.feedly.com/#subscription%2Ffeed%2F{{ .Permalink | safeHTML }}"
+        target="_blank">
+          <i class="fa fa-rss" aria-hidden="true"></i>
+          <span class="c-sharebtn__text">Feedly</span>
+        </a>
+      </div>
+    </li>
+  </ul>
+</nav>

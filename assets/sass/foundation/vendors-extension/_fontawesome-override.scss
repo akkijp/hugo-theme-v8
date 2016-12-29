@@ -1,0 +1,8 @@
+@charset "utf-8";
+
+/* Add hatebu font icon. */
+i.fa.fa-hatebu:before {
+    content: 'B!';
+    font-weight: bold;
+    font-family: Verdana;
+}

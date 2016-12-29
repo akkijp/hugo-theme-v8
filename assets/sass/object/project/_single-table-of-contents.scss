@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+
+.c-table-of-contents{
+  width: 100%;
+  margin-bottom: 3em;
+  .c-table-of-contents--title{
+    margin-bottom: .5em;
+    margin-top: 2.5em;
+    padding-bottom: .3em;
+    font-size: 1.7em;
+    border-bottom: 1px solid #dedede;
+  }
+  nav{
+    width: 100%;
+
+    margin-right: auto;
+    margin-left: auto;
+    padding: 13px;
+    border-radius: 5px;
+    background: #eee;
+    > ul{
+      margin: 0;
+      padding: 0;
+      list-style:none;
+    }
+
+    @media (min-width: 768px){
+      width: 95%;
+    }
+
+  }
+}
+
+.c-sponsored-links + .c-table-of-contents .c-table-of-contents--title {
+    margin-top: 0;
+}

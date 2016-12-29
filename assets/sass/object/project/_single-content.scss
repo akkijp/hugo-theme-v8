@@ -1,0 +1,122 @@
+@charset "utf-8";
+
+.p-single-content{
+  img{
+    border: 2px solid #ddd;
+    border-radius: 3px;
+  }
+
+  a[data-lightbox=image]{
+    display: inline-block;
+    padding: 2px;
+    background-color: #fff;
+    line-height: 0;
+    transition: background-color 0.5s ease-out;
+    color: #4ae;
+    text-decoration: none;
+    outline: 0;
+    border-radius: 4px;
+    > img{
+      // width: 7rem;
+      border-radius: 4px;
+    }
+    &:hover{
+      background-color: #4ae;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6{
+    color: #0c1d2b;
+    line-height: 1.225;
+    margin: 1.35em 0 .7em;
+    padding: 0 0 .3em;
+  }
+  h1 {
+    margin-bottom: .5em;
+    margin-top: 2.5em;
+    padding-bottom: .3em;
+    font-size: 1.7em;
+    line-height: 1.2;
+    border-bottom: 3px solid #dedede;
+  }
+  h2{
+    margin-bottom: .5em;
+    margin-top: 2.5em;
+    padding-bottom: .3em;
+    font-size: 1.6em;
+    line-height: 1.225;
+    border-bottom: 1px solid #dedede;
+  }
+  h3{
+    margin-top: 3em;
+    font-size: 1.3em;
+    line-height: 1.43;
+  }
+  h4{
+    margin-top: 1.3em;
+    font-size: 1.2em;
+    margin-top: 1.3em;
+  }
+  h5{
+    margin-top: 1.5em;
+    font-size: 1.1em;
+  }
+  h6{
+    margin-top: 1.5em;
+    font-size: 1em;
+    color: #777;
+  }
+
+  blockquote{
+    margin: 40px 0 28px;
+    padding: 25px 20px 25px 55px;
+    background: #f6f6f6;
+    clear: both;
+    border: none;
+    position: relative;
+    quotes: none;
+    border-radius: 5px;
+    font-size: 90%;
+  }
+  blockquote:before{
+    content: '';
+    font-family: 'FontAwesome';
+    position: absolute;
+    top: 20px;
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    border-radius: 50%;
+    background: #444;
+    color: #fff;
+    left: -20px;
+    font-size: 16px;
+    padding-top: 2px;
+    text-align: center;
+
+    @media screen and (max-width: 767px){
+      width: 24px;
+      height: 24px;
+      line-height: 22px;
+      top: -12px;
+      left: 20px;
+      font-size: 12px;
+    }
+  }
+
+  figure{
+    figcaption{
+      h4{
+        margin: 0;
+        text-align: right;
+      }
+    }
+  }
+  figure.sm{
+    width: 100%;
+    @media (min-width: 768px){
+      width: 50%;
+    }
+  }
+
+}

@@ -1,0 +1,141 @@
+@charset "utf-8";
+
+
+.ly_share{
+  padding-top: 1.2em;
+  font-size: 15px;
+
+  @extend %clearfix;
+
+  .ly_share--text{
+    font-size: 8px;
+    display: block;
+  }
+
+  .ly_share--btn {
+
+    margin: 0 -.43em;
+    margin: 0;
+    margin-top: 8px;
+    padding: 0;
+    list-style: none;
+
+    display: -webkit-box;/* Android4.3以前ブラウザ用 */
+    display: -webkit-flex;/* iOS8以前Safari用 */
+    display: flex;
+
+    -webkit-flex-wrap: nowrap; /* Safari */
+    flex-wrap:         nowrap;
+
+    @media (min-width: 992px){
+      width: 50%;
+      float: left;
+    }
+
+    .ly_share--btn__item {
+      padding: 0 .43em;
+      text-decoration: none;
+      list-style:none;
+
+      -webkit-box-flex: 1;/*--- Android4.3以前ブラウザ用 ---*/
+      -webkit-flex: 1;/*--- iOS8以前Safari用 ---*/
+      flex: 1;
+    }
+
+    &:before, &:after {
+      display: table;
+      content: '';
+    }
+
+  }
+
+}
+
+
+.c-sharebtn{
+  a {
+    font-size: 1.3em;
+    width: 100%;
+    display: block;
+    padding: 5px;
+    color: #fff;
+    line-height: 1em;
+    text-align: center;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+
+    -webkit-transition: 0.2s ease;
+    -moz-transition: 0.2s ease;
+    -o-transition: 0.2s ease;
+    transition: 0.2s ease;
+    text-decoration: none;
+  }
+
+  i{
+    margin: 0;
+  }
+
+  .c-sharebtn__count{
+    font-size: 0.8em;
+    display: inline-block;
+  }
+
+  .c-sharebtn__text{
+    font-size: 0.8em;
+    display: block;
+  }
+
+  .c-sharebtn__hatebu a{
+    color: #008fde;
+    border-color: #008fde;
+    &:hover, &.pushed{
+      color: #fff;
+      background-color: #008fde;
+    }
+  }
+
+  a.c-sharebtn__facebook {
+    color: #3b5998;
+    border-color: #3b5998;
+    &:hover, &.pushed{
+      color: #fff;
+      background-color: #3b5998;
+    }
+  }
+
+  a.c-sharebtn__twitter {
+    color: #55acee;
+    border-color: #55acee;
+    &:hover, &.pushed{
+      color: #fff;
+      background-color: #55acee;
+    }
+  }
+
+  a.c-sharebtn__google {
+    color: #cc3732;
+    border-color: #cc3732;
+    &:hover, &.pushed{
+      color: #fff;
+      background-color: #cc3732;
+    }
+  }
+
+  a.c-sharebtn__pocket {
+    color: #ef3e56;
+    border-color: #ef3e56;
+    &:hover, &.pushed{
+      color: #fff;
+      background-color: #ef3e56;
+    }
+  }
+
+  a.c-sharebtn__feedly {
+    color: #2bb24c;
+    border-color: #2bb24c;
+    &:hover, &.pushed{
+      color: #fff;
+      background-color: #2bb24c;
+    }
+  }
+}

@@ -1,3 +1,105 @@
+<!-- シェア数の取得 -->
+<script>
+//はてなブックマークのシェア数
+function getHatenaBookmarkCount(entryUrl, selcter) {
+  entryUrl = 'https://api.hackerslog.net/st-hatena.php?url=' + encodeURIComponent(entryUrl)
+  $.ajax({
+    url:entryUrl,
+    dataType:'jsonp',
+  }).then(
+    function(result){ $(selcter).text(result || 0);},
+    function(){ $(selcter).text('0');}
+  );
+}
+// Facebookのシェア数
+function getFacebookCount(entryUrl, selcter) {
+  entryUrl = 'https://graph.facebook.com/' + encodeURIComponent(entryUrl)
+  $.ajax({
+    url:entryUrl,
+    dataType:'jsonp'
+  }).then(
+    function(result){ $(selcter).text(result.shares || 0);},
+    function(){ $(selcter).text('0');}
+  );
+}
+// Twitterのシェア数
+function getTwitterCount(entryUrl, selcter) {
+  entryUrl = 'https://jsoon.digitiminimi.com/twitter/count.json?url=' + encodeURIComponent(entryUrl)
+  $.ajax({
+    url:entryUrl,
+    dataType:'jsonp'
+  }).then(
+    function(result){ $(selcter).text(result.shares || 0);},
+    function(){ $(selcter).text('0');}
+  );
+}
+$(function(){
+  var PERMALINK_URL = '{{ .Permalink | safeHTML }}'
+  getHatenaBookmarkCount(PERMALINK_URL, '.js-sharebtn-count-hatebu');
+  getFacebookCount(PERMALINK_URL, '.js-sharebtn-count-facebook');
+  getTwitterCount(PERMALINK_URL, '.js-sharebtn-count-twitter');
+});
+</script>
+<!-- シェア数の取得 END -->
+
+
+<!-- シェアボタン押済の表示 -->
+<script>
+var btns = [
+  ".share-buttons .hatebu",
+  ".share-buttons .facebook",
+  ".share-buttons .twitter",
+  ".share-buttons .google",
+  ".share-buttons .pocket",
+  ".share-buttons .feedly",
+];
+
+$(function(){
+  var bind = function(class_name){
+    var $elem = $(class_name);
+    $elem.on("click", function(){
+      $elem.map(function(){
+        $(this).addClass("pushed");
+      })
+    });
+  };
+
+  $.map(btns, function(btn, i){
+    bind(btn);
+  });
+
+});
+</script>
+<!-- シェアボタン押済の表示 END -->
+
+
+{{ $hostname := replaceRE "^https?://([^/:]+).*(:[0-9]+)?/?$" "$1" .Site.BaseURL }}
+<script>
+  // 転載対策
+  $(function() {
+    var isMyHostname = function(myHostname) {
+      var hostname = $(location).attr('hostname');
+      if(hostname === 'localhost'){
+        return true;
+      }
+      if(hostname === (myHostname || '')){
+        return true;
+      }else{
+        return false;
+      }
+    }
+
+    var hostname = '{{ $hostname }}';
+    var redirectURL = '{{ .Site.BaseURL }}'
+
+    if(!isMyHostname(hostname)){
+      $(location).attr("href", redirectURL)
+    }
+  })
+</script>
+
+
+
 <!-- Twitter 埋め込み用スクリプト 非同期読み込み -->
 <script>
 var cb = function() {
