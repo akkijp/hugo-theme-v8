@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+.grid-row{
+  background-color: #fff;
+  padding: 0 16px;
+  @media (min-width: 620px) {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+}
+.grid-cell{
+  border-bottom: 1px solid #eee;
+  &:last-child{
+    border-bottom: none;
+  }
+  @media (min-width: 620px) {
+    margin-bottom: 30px;
+    padding: 0 10px;
+    width: 50%;
+    border-bottom: none;
+  }
+  @media screen and (min-width: 768px) {
+    width: 33.33333%;
+  }
+}

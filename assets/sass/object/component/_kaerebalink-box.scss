@@ -1,0 +1,109 @@
+@charset "utf-8";
+
+
+.kaerebalink-box, .booklink-box {
+  border: 1px solid #dedede;
+  border-radius: 5px;
+  padding: 20px;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  font-size: 15px !important;
+
+  img{
+    border-radius: 0;
+  }
+
+  // デフォルト
+  .booklink-footer {
+    height: 0;
+    clear: left;
+  }
+
+  .kaerebalink-name a {
+    line-height: 1.5;
+  }
+
+  .kaerebalink-image img{
+    float: left; // ドラッキング画像によるデザインの乱れを防ぐため
+  }
+
+  // // カスタム
+  .kaerebalink-image, .booklink-image {
+    margin: 0 0 12px 0 !important;
+    padding: 0;
+    float: left !important;
+    width: 100%;
+    a{
+      display: block;
+      width: 60%;
+      max-width: 180px;
+      margin-right: auto;
+      margin-left: auto;
+      @media (min-width: 600px){
+          width: 100%;
+      }
+    }
+    img{width:100%;}
+    @media (min-width: 600px){
+      margin: 0 !important;
+      width: 20%;
+    }
+  }
+  .kaerebalink-info, .booklink-info {
+    float: left;
+    width: 100%;
+    @media (min-width: 600px){
+      width: 77%;
+      margin-left: 3%;
+    }
+  }
+  .kaerebalink-link1, .booklink-link2 {
+    @extend %clearfix;
+    .shoplinkamazon, .shoplinkrakuten{
+      display: block !important;
+      margin: 10px 0 0 0 !important;
+      text-align: center;
+      width: 100%;
+      border-radius: 5px;
+      a {
+        text-decoration: none;
+        color: white;
+        padding: 10px 0;
+        display: block;
+      }
+      @media (min-width: 600px){
+        margin-bottom: 3px;
+        margin-left: 8px;
+        width: 47.5%;
+      }
+    }
+    .shoplinkamazon {
+      height: 50px;
+      background: #F4B134;
+      display: block !important;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    .shoplinkrakuten {
+      height: 50px;
+      background: #e74c3c;
+      display: block !important;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    @media (min-width: 600px){
+      display: -webkit-flex; /* Safari */
+      display: flex;
+      -webkit-flex-direction: row; /* Safari */
+      flex-direction:         row;
+      -webkit-justify-content: space-between; /* Safari */
+      justify-content:         space-between;
+    }
+
+  }
+
+}

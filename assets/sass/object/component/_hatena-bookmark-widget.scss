@@ -1,0 +1,76 @@
+@charset "utf-8";
+
+
+/*========================================
+ * hatena bookmark
+ *========================================*/
+
+.hatena-bookmark-widget-notheme{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  .hatena-bookmark-widget-title{
+    background: #5279E7;
+    padding: 5px 0 5px 3px;
+    border-radius: 4px 4px 0 0;
+    a{
+      font-weight: bold;
+      display: block;
+      color: #FFF;
+      margin-left: 8px;
+      font-size: 90%;
+    }
+    img{
+      margin-right: 8px;
+    }
+  }
+  .hatena-bookmark-widget-body{
+    ul{
+      list-style:none;
+      padding: 0;
+      margin: 0;
+      background: #f3f3f3;
+    }
+    li{
+      margin: 0;
+      padding: 5px;
+      border-bottom: 1px solid #ddd;
+      height: 4.5em;
+      position: relative;
+      background: none;
+      font-size: 90%;
+      .hatena-bookmark-count{
+        position: absolute;
+        bottom: 3px;
+        right: 5px;
+        float: right;
+      }
+    }
+  }
+  .hatena-bookmark-widget-footer{
+    text-align: center;
+    padding: 3px;
+    font-weight: bold;
+    font-size: 90%;
+    color:#5279E7;
+    background: #f3f3f3;
+    a{text-decoration: none;}
+  }
+  .hatena-bookmark-count{
+    a{
+      text-decoration: underline;
+    }
+    em{
+      vertical-align: bottom;
+      a{
+        background-color: #fff0f0;
+        font-weight: bold;
+        display: inline;
+        font-style: normal;
+        color: #ff6666;
+      }
+    }
+    strong{
+
+    }
+  }
+}

@@ -7,7 +7,31 @@
 </head>
 <body id="body">
 
+  {{ partial "header.html" . }}
+  {{ partial "header-nav.html" . }}
 
+  <div class="layout__main-container-outer">
+    <div class="layout__main-container-inner">
+
+
+      <div class="row">
+
+        <div class="col-sm-7 col-md-8">
+          {{ partial "post-list.html" . }}
+        </div>
+
+        <div class="col-sm-5 col-md-4">
+          {{ partial "side-nav.html" . }}
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+
+{{ partial "to-top-btn.html" . }}
+{{ partial "footer.html" . }}
 {{ partial "foot.html" . }}
 </body>
 </html>

@@ -45,3 +45,11 @@
 
 * Aboutのデザインも素晴らしいが、サイトのAboutに何を載せるべきかを考えさせられる一つ
 * 内容を参考にしたい
+
+
+SEO対策
+-----
+
+### http://dev.classmethod.jp/ria/microdata/
+
+* HTML文章の中のメタデータをより認識しやすくする「Microdata」をSEO対策として実施する
