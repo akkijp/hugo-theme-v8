@@ -139,7 +139,6 @@ $(function(){
       $(".navbar").removeClass("js-opacity");
     }
   }
-  setTimeout(header_decolation, 1000);
   $(window).scroll(header_decolation);
 });
 </script>
@@ -162,6 +161,8 @@ $(function(){
 
 {{ partial "plugin/script.html" . }}
 {{ partial "plugin/style.html" . }}
+
+
 
 {{ "<!--" | safeHTML }}
 Create from: {{ .Site.BaseURL }} @ {{ if .Hugo.BuildDate }}{{ .Hugo.BuildDate }}{{ else }}{{ .Now.Format "2006-01-02 15:04:05" }}{{ end }} by Hugo
