@@ -98,6 +98,14 @@ $(function(){
   })
 </script>
 
+<!-- table overflow scroll -->
+<script>
+  $(function(){
+    var html = '<div style="overflow:scroll;"></div>';
+    $(".js-single-content table").wrap(html);
+  });
+</script>
+<!-- table overflow scroll END -->
 
 
 <!-- Twitter 埋め込み用スクリプト 非同期読み込み -->
@@ -120,12 +128,37 @@ if(tt.length){
 </script>
 <!-- Twitter 埋め込み用スクリプト 非同期読み込み -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/bash.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/go.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/css.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/javascript.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+<!-- header のデコレーション -->
+<script>
+$(function(){
+  function header_decolation(){
+    var top = $(".navbar").offset().top;
+    if ( top > 60) {
+      $(".navbar").addClass("js-opacity");
+    } else if (top < 40) {
+      $(".navbar").removeClass("js-opacity");
+    }
+  }
+  setTimeout(header_decolation, 1000);
+  $(window).scroll(header_decolation);
+});
+</script>
+<!-- header のデコレーション END -->
+
+<!-- Code highlighting -->
+<script>
+hljs.configure({
+	tabReplace: "    "
+});
+hljs.initHighlightingOnLoad();
+
+// highlight.js のカスタム設定
+$(function(){
+  $(".language-text").addClass("hljs");
+});
+</script>
+<!-- Code highlighting END -->
+
 
 {{ partial "plugin/script.html" . }}
 {{ partial "plugin/style.html" . }}
