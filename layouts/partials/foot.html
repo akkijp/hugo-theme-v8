@@ -1,3 +1,58 @@
+<!--
+非同期型ライブラリの読み込みはここから
+-->
+
+
+<!-- Twitter 埋め込み用スクリプト 非同期読み込み -->
+<script>
+var cb = function() {
+  var l=document.createElement('script');
+  l.id="twitter-wjs";
+  l.async = 1;
+  l.src="//platform.twitter.com/widgets.js";
+  l.charset="utf-8";
+  document.body.appendChild(l);
+}
+var tt = document.getElementsByClassName( "twitter-tweet" );
+if(tt.length){
+  var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+      webkitRequestAnimationFrame || msRequestAnimationFrame;
+  if (raf) raf(cb);
+  else window.addEventListener('load', cb);
+}
+</script>
+<!-- Twitter 埋め込み用スクリプト 非同期読み込み -->
+
+<!-- ビーコン画像の読み込み -->
+<script>
+var PERMALINK_URL = '{{ .Permalink | safeHTML }}'
+var cb = function() {
+  var l = document.createElement('img');
+  l.src = '/imgs/beacon.png?url='+PERMALINK_URL;
+  l.style = "display:none;"
+  document.body.appendChild(l);
+};
+var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+    webkitRequestAnimationFrame || msRequestAnimationFrame;
+if (raf) raf(cb);
+else window.addEventListener('load', cb);
+</script>
+<!-- ビーコン画像の読み込み END -->
+
+
+
+
+
+
+
+
+
+
+<!--
+同期型ライブラリの読み込みはここから
+-->
+
+
 <!-- シェア数の取得 -->
 <script>
 //はてなブックマークのシェア数
@@ -107,26 +162,6 @@ $(function(){
 </script>
 <!-- table overflow scroll END -->
 
-
-<!-- Twitter 埋め込み用スクリプト 非同期読み込み -->
-<script>
-var cb = function() {
-  var l=document.createElement('script');
-  l.id="twitter-wjs";
-  l.async = 1;
-  l.src="//platform.twitter.com/widgets.js";
-  l.charset="utf-8";
-  document.body.appendChild(l);
-}
-var tt = document.getElementsByClassName( "twitter-tweet" );
-if(tt.length){
-  var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-      webkitRequestAnimationFrame || msRequestAnimationFrame;
-  if (raf) raf(cb);
-  else window.addEventListener('load', cb);
-}
-</script>
-<!-- Twitter 埋め込み用スクリプト 非同期読み込み -->
 
 <!-- header のデコレーション -->
 <script>

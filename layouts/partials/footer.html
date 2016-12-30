@@ -16,8 +16,12 @@
 
       <p class=footer__code_with_love>code with <i class="fa fa-heart"></i></p>
       <p class="footer__copy">
-        {{ $url := (replaceRE "^https?://([^/:]+).*(:[0-9]+)?/?$" "$1" .Site.BaseURL) }}
-        © {{ .Now.Format "2006" }} {{ $url }} All rights reserved.
+        {{ if .Site.Params.Copyright }}
+          © {{ .Now.Format "2006" }} {{ .Site.Params.Copyright }}
+        {{ else }}
+          {{ $url := (replaceRE "^https?://([^/:]+).*(:[0-9]+)?/?$" "$1" .Site.BaseURL) }}
+          © {{ .Now.Format "2006" }} {{ $url }} All rights reserved.
+        {{ end }}
         Powered by the <a href="http://gohugo.io" target="_blank">Hugo</a>.
       </p>
       <p class="footer__by-nc-nd">
