@@ -1,3 +1,7 @@
 <header class="layout__header" role="banner">
-  <img src="/imgs/mainvisual.jpg" alt="">
+  {{ if .Site.Params.mainvisual }}
+    <img src="{{ .Site.Params.mainvisual }}" alt="">
+  {{ else }}
+    <img src="/imgs/mainvisual.jpg" alt="">
+  {{ end }}
 </header>
