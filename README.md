@@ -1,5 +1,22 @@
 # hugo-theme-v8
 
+```
+aliases:
+- /posts/conference/2016-05-21/php-conference-2016.html
+- /posts/chat/conference/2016-05-21/php-conference-2016/
+date: 2016-05-21T12:51:00+09:00
+title: PHPカンファレンス2016に参加しました
+mainvisual: "/img/img.png"
+description: ""
+keywords: ""
+layout: post
+categories:
+- 日記
+tags:
+- conference
+noindex: true
+```
+
 サイトを作る上で参考にしたサイト
 -----
 
