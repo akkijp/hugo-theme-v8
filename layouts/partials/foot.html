@@ -156,8 +156,10 @@ $(function(){
 <!-- table overflow scroll -->
 <script>
   $(function(){
-    var html = '<div style="overflow:scroll;"></div>';
-    $(".js-single-content table").wrap(html);
+    $elem = $('.js-single-content table')
+    $elem.addClass('table')
+         .addClass('table-striped')
+         .addCLass('table-bordered');
   });
 </script>
 <!-- table overflow scroll END -->
