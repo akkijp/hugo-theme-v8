@@ -24,8 +24,9 @@
     line-height: 1.5;
   }
 
-  .kaerebalink-image img{
+  .kaerebalink-image > img{
     float: left; // ドラッキング画像によるデザインの乱れを防ぐため
+    height: 0;
   }
 
   // // カスタム
