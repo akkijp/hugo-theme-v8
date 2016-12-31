@@ -57,7 +57,7 @@
 
 
     {{ $hostname := replaceRE "^https?://([^/:]+).*(:[0-9]+)?/?$" "$1" .Site.BaseURL }}
-    {{ if ne $hostname "localhost" }}
+    {{ if and (ne $hostname "localhost") (not (isset .Params "noindex")) }}
     {{ with .Site.Params.adsense.sidenav }}
     <div class="row">
 

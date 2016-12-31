@@ -81,7 +81,7 @@
   </div>
 
   {{ $hostname := replaceRE "^https?://([^/:]+).*(:[0-9]+)?/?$" "$1" .Site.BaseURL }}
-  {{ if ne $hostname "localhost" }}
+  {{ if and (ne $hostname "localhost") (not (isset .Params "noindex")) }}
   {{ with .Site.Params.adsense.contentTop }}
   <div class="c-sponsored-links mt20 mb20">
     <p>スポンサーリンク</p>
@@ -96,7 +96,7 @@
     {{ index $splitedContent 1 | safeHTML }}
   {{ end }}
 
-  {{ if ne $hostname "localhost" }}
+  {{ if and (ne $hostname "localhost") (not (isset .Params "noindex")) }}
   {{ with .Site.Params.adsense.contentBottom }}
   <div class="c-sponsored-links mt20 mb20">
     <p>スポンサーリンク</p>
