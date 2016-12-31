@@ -26,11 +26,17 @@
       }
 
       .ly__footer--left {
-        @media (min-width: 768px) {float: left;}
+        @media (min-width: 768px) {
+          float: left;
+          margin-right: 20px;
+        }
       }
 
       .ly__footer--right {
-        @media (min-width: 768px) {float: right;}
+        @media (min-width: 768px) {
+          float: right;
+          margin-left: 20px;
+        }
       }
   }
 
