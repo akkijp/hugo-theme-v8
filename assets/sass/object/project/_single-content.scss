@@ -17,7 +17,6 @@
     outline: 0;
     border-radius: 4px;
     > img{
-      // width: 7rem;
       border-radius: 4px;
     }
     &:hover{
@@ -79,7 +78,7 @@
     font-size: 90%;
   }
   blockquote:before{
-    content: '';
+    content: '\f10d';
     font-family: 'FontAwesome';
     position: absolute;
     top: 20px;
@@ -101,21 +100,6 @@
       top: -12px;
       left: 20px;
       font-size: 12px;
-    }
-  }
-
-  figure{
-    figcaption{
-      h4{
-        margin: 0;
-        text-align: right;
-      }
-    }
-  }
-  figure.sm{
-    width: 100%;
-    @media (min-width: 768px){
-      width: 50%;
     }
   }
 
