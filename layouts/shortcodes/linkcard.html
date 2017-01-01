@@ -1,0 +1,7 @@
+<iframe
+  class="c-hatena-embed"
+  {{ with .Get "title"}}title="{{ . }}"{{ end }}
+  {{ with .Get "link"}}src="https://hatenablog-parts.com/embed?url={{ . }}"{{ end }}
+  frameborder="0"
+  scrolling="no">
+</iframe>
