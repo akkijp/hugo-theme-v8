@@ -1,0 +1,16 @@
+<!-- blockquote -->
+<blockquote class="sc-blockquote"{{ with .Get "link" }} cite="{{.}}"{{ end }}>
+  <div class="sc-blockquote__inr">
+    {{ .Inner }}
+    {{ if .Get "cite" }}
+    <p class="sc-blockquote__footer">出典：
+      <cite>
+        {{ with .Get "link"}}<a href="{{ . }}">{{ end }}
+        {{ with .Get "cite" }}{{ . }}{{ end }}
+        {{ if .Get "link"}}</a>{{ end }}
+      </cite>
+    </p>
+    {{ end }}
+  </div>
+</blockquote>
+<!-- blockquote -->

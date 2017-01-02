@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+blockquote.sc-blockquote {
+
+  margin: 40px 0 28px;
+  padding: 25px 20px;
+  background: #f6f6f6;
+  clear: both;
+  border: none;
+  position: relative;
+  quotes: none;
+  border-radius: 5px;
+  font-size: 1rem;
+
+  p{
+    font-size: 0.9rem;
+  }
+
+  .sc-blockquote__inr{
+
+    @media screen and (min-width: 767px){
+      padding: 25px 20px 25px 45px;
+    }
+
+    &:before{
+      content: '\f10d';
+      font-family: 'FontAwesome';
+      position: absolute;
+      border-radius: 50%;
+      background: #444;
+      color: #fff;
+      padding-top: 2px;
+      text-align: center;
+
+      width: 24px;
+      height: 24px;
+      line-height: 22px;
+      top: -12px;
+      left: 20px;
+      font-size: 0.8571428571428571rem;
+
+      @media screen and (min-width: 767px){
+        width: 40px;
+        height: 40px;
+        line-height: 38px;
+        top: 20px;
+        left: -20px;
+        font-size: 16px;
+      }
+    }
+
+    .sc-blockquote__footer{
+      font-size: 0.7857142857142857rem;
+    }
+
+
+  }
+
+}
