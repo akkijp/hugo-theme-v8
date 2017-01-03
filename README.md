@@ -63,6 +63,10 @@ noindex: true
 * Aboutのデザインも素晴らしいが、サイトのAboutに何を載せるべきかを考えさせられる一つ
 * 内容を参考にしたい
 
+### http://wispyon.com/app/chrome-extension/
+
+* カテゴリ一覧、広告の表示方法などが参考になるかもしれない
+
 
 SEO対策
 -----
