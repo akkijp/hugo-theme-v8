@@ -1,7 +1,7 @@
 
 <main role="main">
   <div class="grid-row">
-    {{ $paginator := .Paginate (where .Data.Pages "Type" "post") 24 }}
+    {{ $paginator := .Paginate (where .Data.Pages.ByLastmod.Reverse "Type" "post") 24 }}
     {{ range $paginator.Pages }}
     <div class="grid-cell">
       <article itemscope itemtype="http://schema.org/BlogPosting">
