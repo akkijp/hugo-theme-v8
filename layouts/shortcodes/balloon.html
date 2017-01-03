@@ -1,0 +1,25 @@
+
+<div class="sc-balloon-layout">
+
+  <div class="sc-balloon-widget--avatar">
+    {{ with .Get "avatarlink" }}<a href="{{ . }}">{{ end }}
+    {{ with .Get "avatar" }}
+      <img width="44" height="44" class="sc-balloon-widget--avatar-object" src="{{. }}">
+    {{ else }}
+      <img width="44" height="44" class="sc-balloon-widget--avatar-object" src="/buildin-resource/imgs/logo.png">
+    {{ end }}
+    {{ if .Get "avatarlink" }}</a>{{ end }}
+  </div>
+
+  <div class="sc-balloon-widget--media">
+    {{ with .Get "header" }}
+      <div class="sc-balloon-widget--media-header">
+        <h4 class="sc-balloon-widget--media-header-text">{{ . }}</h4>
+      </div>
+    {{ end }}
+    <div class="sc-balloon-widget--media-body">
+      {{ .Inner }}
+    </div>
+  </div>
+
+</div>

@@ -28,7 +28,7 @@ if(tt.length){
 var PERMALINK_URL = '{{ .Permalink | safeHTML }}'
 var cb = function() {
   var l = document.createElement('img');
-  l.src = '/imgs/beacon.png?url='+PERMALINK_URL;
+  l.src = '/buildin-resource/imgs/beacon.png?url='+PERMALINK_URL;
   l.style = "display:none;"
   document.body.appendChild(l);
 };

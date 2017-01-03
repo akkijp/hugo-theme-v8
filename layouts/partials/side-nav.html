@@ -32,7 +32,7 @@
                 {{ if .Site.Params.AuthorLogo }}
                   <img class="p-author__avatar-img" src="{{ .Site.Params.AuthorLogo }}" alt="{{ .Site.Title }}" />
                 {{ else }}
-                  <img class="p-author__avatar-img" src="/imgs/logo.png" alt="{{ .Site.Title }}" />
+                  <img class="p-author__avatar-img" src="/buildin-resource/imgs/logo.png" alt="{{ .Site.Title }}" />
                 {{ end }}
               </a>
           	</div>
@@ -100,7 +100,7 @@
         {{ if .Params.mainvisual }}
         <img itemprop="image" width="150" height="94" alt="{{ .Title }}" src="{{ .Params.mainvisual }}">
         {{ else }}
-        <img itemprop="image" width="150" height="94" alt="{{ .Title }}" src="/imgs/no-image.png">
+        <img itemprop="image" width="150" height="94" alt="{{ .Title }}" src="/buildin-resource/imgs/no-image.png">
         {{ end }}
       </a>
       <div class="widget__body">
