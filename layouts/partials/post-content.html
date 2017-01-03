@@ -98,17 +98,16 @@
 
 </section>
 
-
 {{ partial "parts/share.html" . }}
 
-
+{{ if and (ne $hostname "localhost") (not (isset .Params "noindex")) }}
 {{ with .Site.Params.adsense.contentBottom }}
 <div class="c-sponsored-links mt20 mb20">
   <p>スポンサーリンク</p>
   {{ partial . }}
 </div>
 {{ end }}
-
+{{ end }}
 
 {{ partial "parts/pager.html" . }}
 {{ partial "parts/disqus.html" . }}
