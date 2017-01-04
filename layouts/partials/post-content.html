@@ -14,7 +14,7 @@
     <div class="mb5">
       <span>
         <i class="fa fa-calendar"></i>
-        <time datetime="{{ .Date }}" itemprop="datePublished" pubdate="pubdate">{{ .Date.Format "2006-01-02" }}</time>
+        <time itemprop="datePublished" pubdate="pubdate" datetime="{{ .PublishDate }}">{{ .Date.Format "2006-01-02" }}</time>
       </span>
       {{ with .Lastmod }}
       <span style="margin-left:18px">
