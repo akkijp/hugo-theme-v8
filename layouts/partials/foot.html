@@ -195,6 +195,20 @@ $(function(){
 </script>
 <!-- Code highlighting END -->
 
+<!-- shortcodes advertisement用 -->
+<script>
+$(function(){
+  var $elem = $('.js-sc-advertisement').find('img');
+  $elem.each(function(){
+    var $this = $(this);
+    if(($this.width() < 2) && ($this.height() < 2)){
+      $this.css({"float" : "left"})
+    }
+  });
+})
+</script>
+<!-- shortcodes advertisement用 END -->
+
 
 {{ partial "plugin/script.html" . }}
 {{ partial "plugin/style.html" . }}
