@@ -99,6 +99,8 @@
 </section>
 
 {{ partial "parts/share.html" . }}
+{{ partial "parts/pager.html" . }}
+{{ partial "parts/disqus.html" . }}
 
 {{ if and (ne $hostname "localhost") (not (isset .Params "noindex")) }}
 {{ with .Site.Params.adsense.contentBottom }}
@@ -109,6 +111,4 @@
 {{ end }}
 {{ end }}
 
-{{ partial "parts/pager.html" . }}
-{{ partial "parts/disqus.html" . }}
 {{ partial "parts/related-article.html" . }}
