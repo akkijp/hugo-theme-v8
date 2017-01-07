@@ -82,7 +82,7 @@
 
   {{ $hostname := replaceRE "^https?://([^/:]+).*(:[0-9]+)?/?$" "$1" .Site.BaseURL }}
   {{ if and (ne $hostname "localhost") (not (isset .Params "noindex")) }}
-  {{ with .Site.Params.adsense.contentTop }}
+  {{ with .Site.Params.advertisement.contentTop }}
   <div class="c-sponsored-links mt20 mb20">
     <p>スポンサーリンク</p>
     {{ partial . }}
@@ -103,7 +103,7 @@
 {{ partial "parts/disqus.html" . }}
 
 {{ if and (ne $hostname "localhost") (not (isset .Params "noindex")) }}
-{{ with .Site.Params.adsense.contentBottom }}
+{{ with .Site.Params.advertisement.contentBottom }}
 <div class="c-sponsored-links mt20 mb20">
   <p>スポンサーリンク</p>
   {{ partial . }}

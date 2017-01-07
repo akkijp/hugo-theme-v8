@@ -1,3 +1,3 @@
 <div class="sc-twitter-tweet">
-  {{ (getJSON "https://api.twitter.com/1/statuses/oembed.json?id=" (index .Params 0)).html | safeHTML }}
+  {{ (getJSON "https://api.hackerslog.net/tweet-oembed.php?id=" (index .Params 0)).html | safeHTML }}
 </div>
