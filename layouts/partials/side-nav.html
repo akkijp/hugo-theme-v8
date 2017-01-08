@@ -124,7 +124,7 @@
       {{/* range first 6 $value.ByCount */}}
       {{ range $value.ByCount }}
       <li class="widget-list__item">
-        <a class="widget-list__item--link" rel="tag category" href="{{ $.Site.BaseURL}}{{ $key }}/{{ .Name | urlize }}">
+        <a class="widget-list__item--link" rel="tag category" href="{{ $.Site.BaseURL}}/{{ $key }}/{{ .Name | urlize }}">
           <span>{{ .Name }}</span><span class="count">(<span>{{ .Count }}</span>)</span>
         </a>
       </li>
