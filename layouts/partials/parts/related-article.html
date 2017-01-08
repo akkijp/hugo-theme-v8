@@ -4,7 +4,7 @@
     <ul class="c-related-article--body">
     {{ $page_link := .Permalink }}
     {{ $tags := .Params.tags }}
-    {{ range .Site.Pages }}
+    {{ range .Site.Pages.ByLastmod.Reverse }}
         {{ $page := . }}
         {{ $has_common_tags := intersect $tags .Params.tags | len | lt 0 }}
         {{ if and $has_common_tags (ne $page_link $page.Permalink) }}

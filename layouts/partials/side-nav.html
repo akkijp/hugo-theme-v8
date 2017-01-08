@@ -94,7 +94,7 @@
 
   <div class="widget">
     <h2 class="widget__title" aria-hidden="true"><i class="fa fa-paper-plane-o" aria-hidden="true"></i>最新の記事</h2>
-    {{ range first 6 (where .Site.Pages "Type" "post") }}
+    {{ range first 6 (where .Site.Pages.ByLastmod.Reverse "Type" "post") }}
     <article class="widget-article">
       <a itemprop="url" href="{{ .Permalink }}" class="widget__media">
         {{ if .Params.mainvisual }}
