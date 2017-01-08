@@ -1,7 +1,7 @@
 <nav>
   <div class="c-related-article">
-    <h2 class="c-related-article--title">関連記事一覧</h2>
-    <ul>
+    <h2 class="c-related-article--head">関連記事一覧</h2>
+    <ul class="c-related-article--body">
     {{ $page_link := .Permalink }}
     {{ $tags := .Params.tags }}
     {{ range .Site.Pages }}
@@ -9,7 +9,9 @@
         {{ $has_common_tags := intersect $tags .Params.tags | len | lt 0 }}
         {{ if and $has_common_tags (ne $page_link $page.Permalink) }}
             <li class="c-related-article--item">
-              <a href="{{ $page.Permalink }}">{{ $page.Title }}</a>
+              <a class="c-related-article--link" href="{{ $page.Permalink }}">
+                {{ $page.Title }}
+              </a>
             </li>
         {{ end }}
     {{ end }}
