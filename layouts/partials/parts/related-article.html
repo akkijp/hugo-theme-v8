@@ -10,7 +10,20 @@
         {{ if and $has_common_tags (ne $page_link $page.Permalink) }}
             <li class="c-related-article--item">
               <a class="c-related-article--link" href="{{ $page.Permalink }}">
-                {{ $page.Title }}
+
+                <div class="c-related-article--media">
+                  {{ if $page.Params.mainvisual }}
+                  <img itemprop="image" alt="{{ $page.Title }}" src="{{ .Params.mainvisual }}">
+                  {{ else }}
+                  <img itemprop="image" alt="{{ $page.Title }}" src="/buildin-resource/imgs/no-image.png">
+                  {{ end }}
+                </div>
+
+                <div class="c-related-article--text">
+                  <p class="c-related-article--title">{{ $page.Title }}</p>
+                  <time class="c-related-article--pubdate" itemprop="datePublished" datetime="{{ $page.Date }}">{{ $page.Date.Format "2006.01.02" }}</time>
+                </div>
+
               </a>
             </li>
         {{ end }}
