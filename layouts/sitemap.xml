@@ -3,8 +3,8 @@
   {{ range .Data.Pages }}
   {{ $page := . }}
     <url>
-      <loc>{{ $page.Permalink }}</loc>
-      <lastmod>{{ safeHTML ( $page.Date.Format "2006-01-02T15:04:05-07:00" ) }}</lastmod>{{ with $page.Sitemap.ChangeFreq }}
+      <loc>{{ $page.Permalink }}</loc>{{ if not $page.Lastmod.IsZero }}
+      <lastmod>{{ safeHTML ( $page.Date.Format "2006-01-02T15:04:05-07:00" ) }}</lastmod>{{ end }}{{ with $page.Sitemap.ChangeFreq }}
       <changefreq>{{ . }}</changefreq>{{ end }}{{ if ge $page.Sitemap.Priority 0.0 }}
       <priority>{{ $page.Sitemap.Priority }}</priority>{{ end }}
     </url>
@@ -12,8 +12,8 @@
     {{ $aliase := . }}
     <url>
       {{ "<!-- Aliase URL -->" | safeHTML }}
-      <loc>{{ $aliase | absLangURL }}</loc>
-      <lastmod>{{ safeHTML ( $page.Date.Format "2006-01-02T15:04:05-07:00" ) }}</lastmod>{{ with $page.Sitemap.ChangeFreq }}
+      <loc>{{ $aliase | absLangURL }}</loc>{{ if not $page.Lastmod.IsZero }}
+      <lastmod>{{ safeHTML ( $page.Date.Format "2006-01-02T15:04:05-07:00" ) }}</lastmod>{{ end }}{{ with $page.Sitemap.ChangeFreq }}
       <changefreq>{{ . }}</changefreq>{{ end }}{{ if ge $page.Sitemap.Priority 0.0 }}
       <priority>{{ $page.Sitemap.Priority }}</priority>{{ end }}
     </url>
