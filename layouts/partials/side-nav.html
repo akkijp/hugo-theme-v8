@@ -40,11 +40,12 @@
             <div class="p-author__self">
               {{ with .Site.Params.Author }}<p>{{ . | safeHTML }}</p>{{ end }}
               <div class="p-author__self--sns">
-                {{ with .Site.Params.email }}<p class="p-author__self--sns--item"><a href="mailto:{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i>Email</a></p>{{ end }}
-                {{ with .Site.Params.facebook }}<p class="p-author__self--sns--item"><a href="{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i>Facebook</a></p>{{ end }}
-                {{ with .Site.Params.twitter }}<p class="p-author__self--sns--item"><a href="{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i>Twitter</a></p>{{ end }}
-          			{{ with .Site.Params.github }}<p class="p-author__self--sns--item"><a href="{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-github fa-lg" aria-hidden="true"></i>GitHub</a></p>{{ end }}
-                {{ with .Site.Params.instagram }}<p class="p-author__self--sns--item"><a href="{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i>Instagram</a></p>{{ end }}
+                {{ with .Site.Params.email }}<span class="p-author__self--sns--item"><a href="mailto:{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i>Email</a></span>{{ end }}
+                {{ with .Site.Params.facebook }}<span class="p-author__self--sns--item"><a href="{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i>Facebook</a></span>{{ end }}
+                {{ with .Site.Params.twitter }}<span class="p-author__self--sns--item"><a href="{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i>Twitter</a></span>{{ end }}
+          			{{ with .Site.Params.github }}<span class="p-author__self--sns--item"><a href="{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-github fa-lg" aria-hidden="true"></i>GitHub</a></span>{{ end }}
+                {{ with .Site.Params.instagram }}<span class="p-author__self--sns--item"><a href="{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i>Instagram</a></span>{{ end }}
+                <span class="p-author__self--sns--item"><i class="fa fa-rss" aria-hidden="true"></i><a href="{{ .RSSLink }}">Feed</a></span>
               </div>
               {{ with .Site.Params.AuthorDetail }}<div>{{ . | safeHTML }}</div>{{ end }}
             </div>

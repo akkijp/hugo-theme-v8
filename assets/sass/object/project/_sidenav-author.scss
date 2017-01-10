@@ -19,6 +19,7 @@
   }
   .p-author__self--sns{
     @extend %clearfix;
+    margin-bottom: 10px;
     .p-author__self--sns--item{
       float: left;
       &:after{
