@@ -1,4 +1,4 @@
-{{ $isInlineElement := ge (len (findRE "(?im)^[ \t]*?<(?:a|abbr|acronym|b|basefont|bdo|big|br|cite|code|dfn|em|font|i|img|input|kbd|label|q|s|samp|select|small|span|strike|strong|sub|sup|textarea|tt|u|var).*?>(.|\n)*?</(?:a|abbr|acronym|b|basefont|bdo|big|br|cite|code|dfn|em|font|i|img|input|kbd|label|q|s|samp|select|small|span|strike|strong|sub|sup|textarea|tt|u|var)>$" .Inner)) 1 }}
+{{ $isInlineElement := ge (len (findRE "(?im)^[ \t]*?<(?:a|abbr|acronym|b|basefont|bdo|big|br|cite|code|dfn|em|font|i|img|input|kbd|label|q|s|samp|select|small|span|strike|strong|sub|sup|textarea|tt|u|var).*?>(.|\n)*?</(?:.*?)>$" .Inner)) 1 }}
 {{ if $isInlineElement }}
 <span class="sc-advertisement js-sc-advertisement">
   {{ .Inner }}
