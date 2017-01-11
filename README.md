@@ -71,9 +71,34 @@ noindex: true
 
 * サイドバーのランキング、特集などの宣伝デザインが素晴らしくてきれい。参考にしたい
 
+### http://seolaboratory.jp/
+
+* サイトのデザインのバランスがとてもよい！
+
+
 SEO対策
 -----
 
 ### http://dev.classmethod.jp/ria/microdata/
 
 * HTML文章の中のメタデータをより認識しやすくする「Microdata」をSEO対策として実施する
+
+### http://www.jweb-seo.com/blog/wordpress/2011/12/05/2515
+
+* Googleのインデックスがなくなってしまったときの対処法
+
+### https://digital-marketing.jp
+
+* SEO関連の情報まとめサイト
+
+### http://seolaboratory.jp/
+
+* SEO関連の情報まとめサイト
+
+### https://digital-marketing.jp/seo/robots-txt-error/
+
+* robots.txtがなくなるとgoogleのindexもなくなってしまう事実が判明！
+
+### https://developers.google.com/webmasters/control-crawl-index/docs/robots_txt?hl=ja
+
+* `robots.txt`には 500kbまでというサイズ制限があることが判明！
