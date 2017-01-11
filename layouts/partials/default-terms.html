@@ -1,0 +1,5 @@
+<ul class="cloud">{{ $plural := .Data.Plural }}
+{{ range $key, $value := .Data.Terms }}
+    <li><a href="/{{ $plural }}/{{ $key | urlize }}">{{ $key }}</a> ({{ len $value }})</li>
+{{ end }}
+</ul>
