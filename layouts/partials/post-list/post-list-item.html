@@ -23,7 +23,7 @@
         {{ if gt $categoriesLen 0 }}
           <i class="fa fa-folder"></i>
           {{ range $k, $v := .Params.categories }}
-          <a rel="tag category" href="{{ $.Site.BaseURL }}categories/{{ . | urlize | lower }}">{{ . }}</a>
+          <a rel="tag category" href="{{ $.Site.BaseURL }}/categories/{{ . | urlize | lower }}">{{ . }}</a>
           {{ end }}
         {{ end }}
         {{ end }}
