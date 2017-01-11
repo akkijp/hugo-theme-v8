@@ -38,7 +38,7 @@
           	</div>
 
             <div class="p-author__self">
-              {{ with .Site.Params.Author }}<p>{{ . | safeHTML }}</p>{{ end }}
+              {{ if .Site.Params.Author }}<p>{{ .Site.Params.Author | safeHTML }}{{ if and .Site.Params.twitter .Site.Params.twitterID }} (<a href="{{ .Site.Params.twitter }}"><i class="fa fa-twitter m0" aria-hidden="true"></i>@{{ .Site.Params.twitterid }}</a>){{ end }}</p>{{ end }}
               <div class="p-author__self--sns">
                 {{ with .Site.Params.email }}<span class="p-author__self--sns--item"><a href="mailto:{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i>Email</a></span>{{ end }}
                 {{ with .Site.Params.facebook }}<span class="p-author__self--sns--item"><a href="{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i>Facebook</a></span>{{ end }}
