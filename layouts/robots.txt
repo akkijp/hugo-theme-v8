@@ -5,8 +5,4 @@
 # Disallow: /
 
 User-agent: *
-
-{{range .Data.Pages}}{{if eq .Params.noindex true }}
-Disallow: {{.RelPermalink}}{{end}}{{end}}
-
 Sitemap: {{ "/sitemap.xml" | absLangURL }}
