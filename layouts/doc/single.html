@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{{ with .Site.LanguageCode }}<html lang="{{ . }}">{{ else }}<html>{{ end }}
+<head>
+
+  {{ partial "head.html" . }}
+
+</head>
+<body id="body">
+
+  {{ partial "header-nav.html" . }}
+
+  <div class="layout__main-container-outer">
+    <div class="layout__main-container-inner">
+
+
+      <div class="document-style">
+
+        {{ partial "doc-content.html" . }}
+
+      </div>
+      <style>
+        .layout__main-container-inner{
+          max-width: 800px;
+        }
+        .document-style{
+          margin-top: 60px;
+        }
+      </style>
+
+
+    </div>
+  </div>
+
+{{ partial "to-top-btn.html" . }}
+{{ partial "footer.html" . }}
+{{ partial "foot.html" . }}
+</body>
+</html>
