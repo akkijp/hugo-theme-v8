@@ -4,10 +4,11 @@
 .p-author{
 
   .p-author__avatar {
-    width: 100px;
+    width: 100%;
+    max-width: 190px;
     margin-right: auto;
     margin-left: auto;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
   .p-author__avatar-img {
     width: 100%;
