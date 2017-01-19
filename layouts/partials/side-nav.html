@@ -38,11 +38,11 @@
           	</div>
 
             <div class="p-author__self">
-              {{ if .Site.Params.Author }}<p>{{ .Site.Params.Author | safeHTML }}{{ if and .Site.Params.twitter .Site.Params.twitterID }} (<a href="{{ .Site.Params.twitter }}"><i class="fa fa-twitter m0" aria-hidden="true"></i>@{{ .Site.Params.twitterid }}</a>){{ end }}</p>{{ end }}
+              {{ if .Site.Params.Author }}<p>{{ .Site.Params.Author | safeHTML }}{{ with .Site.Social.twitter }} (<a href="https://twitter.com/{{ . }}"><i class="fa fa-twitter m0" aria-hidden="true"></i>@{{ . }}</a>){{ end }}</p>{{ end }}
               <div class="p-author__self--sns">
                 {{ with .Site.Params.email }}<span class="p-author__self--sns--item"><a href="mailto:{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i>Email</a></span>{{ end }}
                 {{ with .Site.Params.facebook }}<span class="p-author__self--sns--item"><a href="{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i>Facebook</a></span>{{ end }}
-                {{ with .Site.Params.twitter }}<span class="p-author__self--sns--item"><a href="{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i>Twitter</a></span>{{ end }}
+                {{ with .Site.Social.twitter }}<span class="p-author__self--sns--item"><a href="https://twitter.com/{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i>Twitter</a></span>{{ end }}
           			{{ with .Site.Params.github }}<span class="p-author__self--sns--item"><a href="{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-github fa-lg" aria-hidden="true"></i>GitHub</a></span>{{ end }}
                 {{ with .Site.Params.instagram }}<span class="p-author__self--sns--item"><a href="{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i>Instagram</a></span>{{ end }}
                 {{ with .RSSLink }}<span class="p-author__self--sns--item"><i class="fa fa-rss" aria-hidden="true"></i><a href="{{ . }}" target="_blank" aria-hidden="true">RSS</a></span>{{ end }}
