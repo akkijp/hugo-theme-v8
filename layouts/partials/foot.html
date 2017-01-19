@@ -129,7 +129,7 @@ $(function(){
 
 
 {{ $hostname := replaceRE "^https?://([^/:]+).*(:[0-9]+)?/?$" "$1" .Site.BaseURL }}
-<!-- <script>
+<script>
   // 転載対策
   $(function() {
     var isMyHostname = function(myHostname) {
@@ -151,7 +151,7 @@ $(function(){
       $(location).attr("href", redirectURL)
     }
   })
-</script> -->
+</script>
 
 <!-- table overflow scroll -->
 <script>
