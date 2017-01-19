@@ -36,9 +36,8 @@
 {{ template "_internal/schema.html" . }}
 {{ template "_internal/opengraph.html" . }}
 {{ template "_internal/google_news.html" . }}
-{{ template "_internal/twitter_cards.html" . }}
-{{ partial "parts/google_analytics_async.html" . }}
-
+{{ partial "head/twitter_cards.html" . }}
+{{ partial "head/google_analytics_async.html" . }}
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
