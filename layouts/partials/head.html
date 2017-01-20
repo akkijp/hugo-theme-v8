@@ -1,3 +1,12 @@
+{{ "<!--" | safeHTML }}
+ソースコードを見ていただき、ありがとうございます。
+使えそうな部分がありましたら、どうぞお持ち帰り下さい！
+
+問題がありましたら、下記までご連絡下さい！
+{{ with .Site.Params.email }}{{ . }}{{ end }}
+{{ with .Site.Social.twitter }}投稿は Twitter / @{{ . }} までお寄せください。{{ end }}
+{{ "-->" | safeHTML }}
+
 <meta charset="utf-8">
 
 <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
