@@ -41,6 +41,7 @@
               {{ if .Site.Params.Author }}<p>{{ .Site.Params.Author | safeHTML }}{{ with .Site.Social.twitter }} (<a href="https://twitter.com/{{ . }}"><i class="fa fa-twitter m0" aria-hidden="true"></i>@{{ . }}</a>){{ end }}</p>{{ end }}
               <div class="p-author__self--sns">
                 {{ with .Site.Params.email }}<span class="p-author__self--sns--item"><a href="mailto:{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i>Email</a></span>{{ end }}
+                {{ with .Site.Social.qiita }}<span class="p-author__self--sns--item"><a href="http://qiita.com/{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-qiita fa-lg" aria-hidden="true"></i>Qiita</a></span>{{ end }}
                 {{ with .Site.Params.facebook }}<span class="p-author__self--sns--item"><a href="{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i>Facebook</a></span>{{ end }}
                 {{ with .Site.Social.twitter }}<span class="p-author__self--sns--item"><a href="https://twitter.com/{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i>Twitter</a></span>{{ end }}
           			{{ with .Site.Params.github }}<span class="p-author__self--sns--item"><a href="{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-github fa-lg" aria-hidden="true"></i>GitHub</a></span>{{ end }}
