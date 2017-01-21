@@ -1,26 +1,18 @@
 @charset "utf-8";
 
+.layout__main{
 
-.layout__main-container-outer {
+  background: #fafafa;
 
-  background: #f8f8f8;
-
-  @media (min-width: 768px){
-    padding-top: 45px;
-    padding-bottom: 45px;
-  }
-
-  .layout__main-container-inner {
+  .layout__main-inner{
     @extend %clearfix;
     margin-right: auto;
     margin-left: auto;
-    padding: 15px;
-    background: #ffffff;
-    box-shadow: 0 0 1px #dddddd;
 
     @media (min-width: 768px){
       width: 750px;
-      padding: 35px;
+      padding-top: 45px;
+      padding-bottom: 45px;
     }
 
     @media (min-width: 992px){
@@ -28,9 +20,23 @@
     }
 
     @media (min-width: 1200px){
-      // width: 1170px;
       width: 1120px;
     }
+
+  }
+
+  .layout__main-body{
+    width: 100%;
+    background: #fff;
+    margin-bottom: 30px;
+    padding: 15px;
+    box-shadow: 0 0 1px #ccc;
+  }
+
+  .layout__main-side{
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 15px;
   }
 
 }

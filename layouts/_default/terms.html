@@ -10,22 +10,25 @@
   {{ partial "header.html" . }}
   {{ partial "header-nav.html" . }}
 
-  <div class="layout__main-container-outer">
-    <div class="layout__main-container-inner">
 
+  <div class="layout__main">
+    <div class="layout__main-inner">
 
       <div class="row">
 
-        <div class="col-sm-7 col-md-8">
-          {{ partial "default-terms.html" . }}
+        <div class="col-md-8">
+          <div class="layout__main-body">
+            {{ partial "default-terms.html" . }}
+          </div>
         </div>
 
-        <div class="col-sm-5 col-md-4">
-          {{ partial "side-nav.html" . }}
+        <div class="col-md-4">
+          <div class="layout__main-side">
+            {{ partial "side-nav.html" . }}
+          </div>
         </div>
 
       </div>
-
 
     </div>
   </div>
