@@ -17,6 +17,7 @@
 {{ "-->" | safeHTML }}
 
 <meta charset="utf-8">
+{{ with .URL }}<link rel="canonical" href="{{ . | absLangURL }}" />{{ end }}
 
 <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
 
