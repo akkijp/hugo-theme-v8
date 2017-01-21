@@ -24,18 +24,6 @@
       {{ end }}
     </div>
 
-    {{ if isset .Params "tags" }}
-    {{ $tagsLen := len .Params.tags }}
-    {{ if gt $tagsLen 0 }}
-    <div class="mb5">
-      <i class="fa fa-tags"></i>
-      {{ range $k, $v := .Params.tags }}
-      <a class="p-content-header__link" href="{{ $.Site.BaseURL }}tags/{{ . | urlize | lower }}">{{ . }}</a>
-      {{ end }}
-    </div>
-    {{ end }}
-    {{ end }}
-
     {{ if isset .Params "categories" }}
     {{ $categoriesLen := len .Params.categories }}
     {{ if gt $categoriesLen 0 }}
@@ -43,6 +31,18 @@
       <i class="fa fa-folder"></i>
       {{ range $k, $v := .Params.categories }}
       <a class="p-content-header__link" href="{{ $.Site.BaseURL }}categories/{{ . | urlize | lower }}">{{ . }}</a>
+      {{ end }}
+    </div>
+    {{ end }}
+    {{ end }}
+
+    {{ if isset .Params "tags" }}
+    {{ $tagsLen := len .Params.tags }}
+    {{ if gt $tagsLen 0 }}
+    <div class="mb5">
+      <i class="fa fa-tags"></i>
+      {{ range $k, $v := .Params.tags }}
+      <a class="p-content-header__link" href="{{ $.Site.BaseURL }}tags/{{ . | urlize | lower }}">{{ . }}</a>
       {{ end }}
     </div>
     {{ end }}
