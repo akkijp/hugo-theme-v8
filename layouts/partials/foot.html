@@ -216,5 +216,10 @@ $(function(){
 
 
 {{ "<!--" | safeHTML }}
+
 Create from: {{ .Site.BaseURL }} @ {{ if .Hugo.BuildDate }}{{ .Hugo.BuildDate }}{{ else }}{{ .Now.Format "2006-01-02 15:04:05" }}{{ end }} by Hugo
+Hugo Version: {{ .Hugo.Version }}
+Hugo CommitHash: {{ .Hugo.CommitHash }}
+Hugo BuildDate: {{ .Hugo.BuildDate }}
+
 {{ "-->" | safeHTML }}
