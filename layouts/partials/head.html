@@ -34,16 +34,15 @@
 {{ with .Description }}<meta name="description" content="{{ . }}">{{ end }}
 {{ with .Keywords }}<meta name="keywords" content="{{ . }}">{{ end }}
 {{ with .Site.Params.Author }}<meta name="author" content="{{ . | plainify }}">{{ end }}
-
 <link rel="alternate" href="/index.xml" type="application/rss+xml" title="{{ .Site.Title }}">
-<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.ico">
-<link rel="apple-touch-icon-precomposed" href="/favicon-152.png">
 
 {{ if .RSSLink }}
   <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
   <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
 {{ end }}
 
+
+{{ partial "head/favicon.html" . }}
 
 {{ "<!--[if lt IE 9]>" | safeHTML }}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
