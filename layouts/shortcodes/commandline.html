@@ -1,0 +1,22 @@
+<pre class="command-line">
+<span class="command">curl -i https://api.github.com -u valid_username:valid_password</span>
+<span class="output">HTTP/1.1 403 Forbidden</span>
+
+<span class="output">{</span>
+<span class="output">  "message": "Maximum number of login attempts exceeded. Please try again later.",</span>
+<span class="output">  "documentation_url": "https://developer.github.com/v3"</span>
+<span class="output">}</span>
+</pre>
+<style>
+.command-line {
+    padding: 10px;
+    background-color: #444;
+    color: #fff;
+    border-radius: 3px;
+    border: none;
+    position: relative;
+}
+.command-line span.output {
+    color: #63E463;
+}
+</style>

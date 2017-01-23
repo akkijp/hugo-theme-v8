@@ -183,14 +183,11 @@ $(function(){
 
 <!-- Code highlighting -->
 <script>
-hljs.configure({
-	tabReplace: "    "
-});
-hljs.initHighlightingOnLoad();
-
 // highlight.js のカスタム設定
 $(function(){
   $(".language-text").addClass("hljs");
+  hljs.configure({ tabReplace: "    " });
+  hljs.initHighlightingOnLoad();
 });
 </script>
 <!-- Code highlighting END -->
