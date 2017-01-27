@@ -1,0 +1,6 @@
+<ul>
+  {{ $paginator := .Paginate (where .Data.Pages.ByLastmod.Reverse "Type" "post") 24 }}
+  {{ range $paginator.Pages }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+  {{ end }}
+</ul>

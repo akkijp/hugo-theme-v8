@@ -2,6 +2,7 @@
 {{ with .Site.LanguageCode }}<html lang="{{ . }}" itemscope itemtype="http://schema.org/Article">{{ else }}<html itemscope itemtype="http://schema.org/Article">{{ end }}
 <head>
 
+  {{ "<!--" | safeHTML }} _default/single.html {{ "-->" | safeHTML }}
   {{ partial "head.html" . }}
 
 </head>
