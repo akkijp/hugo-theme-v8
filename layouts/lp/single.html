@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{{ with .Site.LanguageCode }}<html lang="{{ . }}">{{ else }}<html>{{ end }}
+<head>
+
+  <meta name="robots" content="noindex">
+  {{ partial "head.html" . }}
+
+</head>
+<body id="body">
+
+  {{ partial "header-nav.html" . }}
+
+  <div class="layout__main">
+    <div class="layout__main-inner">
+
+      <div class="document-style">
+
+        {{ partial "docs-content.html" . }}
+
+      </div>
+      <style>
+        .document-style{
+          max-width: 1000px;
+          margin: 50px auto;
+          padding: 10px;
+          background: #fff;
+          box-shadow: 0 0 1px #ccc;
+        }
+        .document-style img{
+          max-width: 100%;
+          box-shadow: 0 0 1px #ccc;
+        }
+      </style>
+
+    </div>
+  </div>
+
+{{ partial "to-top-btn.html" . }}
+{{ partial "footer.html" . }}
+{{ partial "foot.html" . }}
+</body>
+</html>
