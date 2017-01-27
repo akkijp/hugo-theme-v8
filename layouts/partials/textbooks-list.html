@@ -1,0 +1,5 @@
+<ul>
+  {{ range sort (where .Data.Pages.ByLastmod.Reverse "Type" "textbooks") }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+  {{ end }}
+</ul>
