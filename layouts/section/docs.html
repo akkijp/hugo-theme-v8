@@ -2,7 +2,7 @@
 {{ with .Site.LanguageCode }}<html lang="{{ . }}">{{ else }}<html>{{ end }}
 <head>
 
-  {{ "<!--" | safeHTML }} docs/list.html {{ "-->" | safeHTML }}
+  {{ "<!--" | safeHTML }} section/docs.html {{ "-->" | safeHTML }}
   <meta name="robots" content="noindex">
   {{ partial "head.html" . }}
 
