@@ -15,7 +15,7 @@ gulp.task("sass", function() {
     .pipe(autoprefixer("last 2 version", "ie 8", "ie 7"))
     .pipe(csscomb())
     .pipe(cssmin())
-    .pipe(gulp.dest("./static/assets/css"));
+    .pipe(gulp.dest("./static/buildin-assets/css"));
 });
 
 
