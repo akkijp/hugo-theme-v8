@@ -91,8 +91,12 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/xcode.min.css" rel="stylesheet">
-<link rel="stylesheet" href="/buildin-assets/css/main.css?unix={{ .Now.Unix }}">
 
+{{ $unix_time := .Now.Unix }}
+<link rel="stylesheet" href="/buildin-assets/css/main.css?unix={{ $unix_time }}">
+{{ range readDir "/static/assets/css" }}
+<link rel="stylesheet" href="/assets/css/{{ .Name | relURL }}?unix={{ $unix_time }}">
+{{ end }}
 
 <script src="https://cdn.rawgit.com/tholman/dom-animator/6073c407/dom-animator.min.js"></script>
 <script>
