@@ -2,28 +2,24 @@
 
 .layout__main{
 
-  background: #fafafa;
+  @extend %clearfix;
+  margin-right: auto;
+  margin-left: auto;
 
-  .layout__main-inner{
-    @extend %clearfix;
-    margin-right: auto;
-    margin-left: auto;
-
-    @media (min-width: 768px){
-      width: 750px;
-      padding-top: 45px;
-      padding-bottom: 45px;
-    }
-
-    @media (min-width: 992px){
-      width: 970px;
-    }
-
-    @media (min-width: 1200px){
-      width: 1120px;
-    }
-
+  @media (min-width: 768px){
+    width: 750px;
+    margin-top: 45px;
+    margin-bottom: 45px;
   }
+
+  @media (min-width: 992px){
+    width: 970px;
+  }
+
+  @media (min-width: 1200px){
+    width: 1120px;
+  }
+
 
   .layout__main-body{
     width: 100%;
