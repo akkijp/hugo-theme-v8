@@ -46,7 +46,7 @@
                 {{ with .Site.Social.twitter }}<span class="p-author__self--sns--item"><a href="https://twitter.com/{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i>Twitter</a></span>{{ end }}
           			{{ with .Site.Params.github }}<span class="p-author__self--sns--item"><a href="{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-github fa-lg" aria-hidden="true"></i>GitHub</a></span>{{ end }}
                 {{ with .Site.Params.instagram }}<span class="p-author__self--sns--item"><a href="{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i>Instagram</a></span>{{ end }}
-                {{ with .RSSLink }}<span class="p-author__self--sns--item"><i class="fa fa-rss" aria-hidden="true"></i><a href="{{ . }}" target="_blank" aria-hidden="true">RSS</a></span>{{ end }}
+                {{ with .RSSLink }}<span class="p-author__self--sns--item"><a href="{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-rss" aria-hidden="true"></i>RSS</a></span>{{ end }}
               </div>
               {{ with .Site.Params.AuthorDetail }}<div>{{ . | safeHTML }}</div>{{ end }}
             </div>

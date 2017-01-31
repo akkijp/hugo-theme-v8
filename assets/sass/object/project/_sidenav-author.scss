@@ -32,6 +32,8 @@
       &:last-child:after{
         content: none;
       }
+      .fa{transition: 0.3s;}
+      &:hover .fa{transform: rotateX(360deg);}
     }
   }
 
