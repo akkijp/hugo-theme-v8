@@ -8,30 +8,29 @@
 
 </head>
 <body id="body">
-
   {{ partial "header-nav.html" . }}
 
   <div class="layout__main">
 
-      <div class="document-style">
+    <div class="document-style">
 
-        {{ partial "docs-list.html" . }}
+      {{ partial "docs-list.html" . }}
 
-      </div>
-      <style>
-        .document-style{
-          max-width: 700px;
-          margin: 50px auto;
-          padding: 10px;
-          background: #fff;
-          box-shadow: 0 0 1px #ccc;
-        }
-      </style>
+    </div>
+    <style>
+      .document-style{
+        max-width: 700px;
+        margin: 50px auto;
+        padding: 10px;
+        background: #fff;
+        box-shadow: 0 0 1px #ccc;
+      }
+    </style>
 
   </div>
 
-{{ partial "to-top-btn.html" . }}
-{{ partial "footer.html" . }}
-{{ partial "foot.html" . }}
+  {{ partial "to-top-btn.html" . }}
+  {{ partial "footer.html" . }}
+  {{ partial "foot.html" . }}
 </body>
 </html>
