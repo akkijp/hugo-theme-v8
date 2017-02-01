@@ -58,6 +58,22 @@
     </div>
 
 
+
+    {{ with .Site.Params.news }}
+    <div class="row">
+
+      <div class="col-md-12">
+        <div class="c-sponsored-links">
+          <h2><span>ニュース</span></h2>
+          {{ partial . }}
+        </div>
+      </div>
+
+    </div>
+    {{ end }}
+
+
+
     {{ $hostname := replaceRE "^https?://([^/:]+).*(:[0-9]+)?/?$" "$1" .Site.BaseURL }}
     {{ if and (ne $hostname "localhost") (not (isset .Params "noindex")) }}
     {{ with .Site.Params.advertisement.sidenav }}
