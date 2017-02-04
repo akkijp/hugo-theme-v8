@@ -16,8 +16,9 @@
 
 
 {{ "-->" | safeHTML }}
-
 <meta charset="utf-8">
+{{ partial "head/google_analytics_async.html" . }}
+{{ partial "head/google_tagmanager_inhead.html" . }}
 
 <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
 
@@ -55,7 +56,7 @@
 {{ template "_internal/opengraph.html" . }}
 {{ template "_internal/google_news.html" . }}
 {{ partial "head/twitter_cards.html" . }}
-{{ partial "head/google_analytics_async.html" . }}
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
