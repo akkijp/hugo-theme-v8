@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+.sc-grid{
+
+  @extend %clearfix;
+
+  > *{
+    width: 100%;
+    max-width: 100%;
+    float: left;
+    @media screen and (min-width: 599px){
+      width: 49%;
+
+      &:nth-child(odd){
+        margin-right: .5%;
+      }
+      &:nth-child(even){
+        margin-left: .5%;
+      }
+    }
+  }
+
+}
