@@ -17,7 +17,7 @@
 
 {{ "-->" | safeHTML }}
 <meta charset="utf-8">
-{{ partial "head/google_analytics_async.html" . }}
+{{/* partial "head/google_analytics_async.html" . */}}
 {{ partial "head/google_tagmanager_inhead.html" . }}
 
 <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
