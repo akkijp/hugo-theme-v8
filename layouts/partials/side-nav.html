@@ -48,6 +48,11 @@
                 {{ with .Site.Params.instagram }}<span class="p-author__self--sns--item"><a href="{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i>Instagram</a></span>{{ end }}
                 {{ with .RSSLink }}<span class="p-author__self--sns--item"><a href="{{ . }}" target="_blank" aria-hidden="true"><i class="fa fa-rss" aria-hidden="true"></i>RSS</a></span>{{ end }}
               </div>
+              {{ with .Site.Params.opinionsURL }}
+              <div class="p-author__opinions_to">
+                <a href="{{ . }}"><i class="fa fa-inbox fa-lg" aria-hidden="true"></i>ご意見はこちらから</a>
+              </div>
+              {{ end }}
               {{ with .Site.Params.AuthorDetail }}<div>{{ . | safeHTML }}</div>{{ end }}
             </div>
           </address>
