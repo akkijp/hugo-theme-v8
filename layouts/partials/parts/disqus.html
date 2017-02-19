@@ -1,3 +1,4 @@
+{{ if and (ne .Site.Params.comment false) (ne .Params.comment false) }}
 {{ if .Site.Params.Disqus }}
   <div class="disqus">
     {{/* template "_internal/disqus.html" . */}}
@@ -23,4 +24,5 @@
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com/" class="disqus__dsq-brlink">comments powered by Disqus</a>
   </div>
+{{ end }}
 {{ end }}
