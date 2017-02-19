@@ -61,6 +61,7 @@ function getHatenaBookmarkCount(entryUrl, selcter) {
   $.ajax({
     url:entryUrl,
     dataType:'jsonp',
+    timeout: 8000,
   }).then(
     function(result){ $(selcter).text(result || 0);},
     function(){ $(selcter).text('0');}
@@ -72,6 +73,7 @@ function getFacebookCount(entryUrl, selcter) {
   $.ajax({
     url:entryUrl,
     dataType:'jsonp'
+    timeout: 8000,
   }).then(
     function(result){ $(selcter).text(result.shares || 0);},
     function(){ $(selcter).text('0');}
@@ -83,6 +85,7 @@ function getTwitterCount(entryUrl, selcter) {
   $.ajax({
     url:entryUrl,
     dataType:'jsonp'
+    timeout: 8000,
   }).then(
     function(result){ $(selcter).text(result.shares || 0);},
     function(){ $(selcter).text('0');}
