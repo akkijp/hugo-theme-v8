@@ -72,7 +72,7 @@ function getFacebookCount(entryUrl, selcter) {
   entryUrl = 'https://graph.facebook.com/' + encodeURIComponent(entryUrl)
   $.ajax({
     url:entryUrl,
-    dataType:'jsonp'
+    dataType:'jsonp',
     timeout: 8000,
   }).then(
     function(result){ $(selcter).text(result.shares || 0);},
@@ -84,7 +84,7 @@ function getTwitterCount(entryUrl, selcter) {
   entryUrl = 'https://jsoon.digitiminimi.com/twitter/count.json?url=' + encodeURIComponent(entryUrl)
   $.ajax({
     url:entryUrl,
-    dataType:'jsonp'
+    dataType:'jsonp',
     timeout: 8000,
   }).then(
     function(result){ $(selcter).text(result.shares || 0);},
