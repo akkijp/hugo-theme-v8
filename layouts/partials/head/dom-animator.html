@@ -1,0 +1,41 @@
+<script src="https://cdn.rawgit.com/tholman/dom-animator/6073c407/dom-animator.min.js"></script>
+<script>
+var domAnimator = new DomAnimator();
+
+// Awesome monkeys from http://www.geocities.ws/SoHo/7373/zoo.html
+
+var frame1 = ['       .-"-.       ',
+              '     _/.-.-.\\_     ',
+              '    ( ( o o ) )    ',
+              '     |/  "  \\|     ',
+              "      \\'/^\\'/      ",
+              '      /`\\ /`\\      ',
+              '     /  /|\\  \\     ',
+              '    ( (/ T \\) )    ',
+              '     \\__/^\\__/     '];
+
+var frame2 = ['       .-"-.       ',
+              '     _/_-.-_\\_     ',
+              '    / __> <__ \\    ',
+              '   / //  "  \\\\ \\   ',
+              "  / / \\'---'/ \\ \\  ",
+              '  \\ \\_/`"""`\\_/ /  ',
+              '   \\           /   ',
+              '    \\         /    ',
+              '     |   .   |     ']
+
+var frame3 = ['       .-"-.       ',
+              '     _/_-.-_\\_     ',
+              '    /|( o o )|\\    ',
+              '   | //  "  \\\\ |   ',
+              "  / / \\'---'/ \\ \\  ",
+              '  \\ \\_/`"""`\\_/ /  ',
+              '   \\           /   ',
+              '    \\         /    ',
+              '     |   .   |     ']
+
+domAnimator.addFrame(frame1);
+domAnimator.addFrame(frame2);
+domAnimator.addFrame(frame3);
+domAnimator.animate(1000);
+</script>

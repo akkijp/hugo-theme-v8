@@ -66,29 +66,10 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
+
 {{ partial "head/highlightjs.html" . }}
-
-<script src="https://cdn.rawgit.com/tholman/dom-animator/6073c407/dom-animator.min.js"></script>
-<script>
-    var domAnimator = new DomAnimator();
-    domAnimator.addFrame('Nice meeting you. (o_o)');
-    domAnimator.addFrame('Nice meeting you. (-_o)');
-    domAnimator.animate();
-</script>
-
-
-<link href="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/css/emojione.min.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/lib/js/emojione.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function() {
-  $(".js-convert-emoji").each(function() {
-    var original = $(this).html();
-    // use .shortnameToImage if only converting shortnames (for slightly better performance)
-    var converted = emojione.toImage(original);
-    $(this).html(converted);
-  });
-});
-</script>
+{{ partial "head/dom-animator.html" . }}
+{{ partial "head/emojione.html" . }}
 
 
 {{ $unix_time := .Now.Unix }}
