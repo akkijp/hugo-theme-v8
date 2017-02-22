@@ -1,0 +1,24 @@
+{{ $hostname := replaceRE "^https?://([^/:]+).*(:[0-9]+)?/?$" "$1" .Site.BaseURL }}
+<script>
+  // 転載対策
+$(function() {
+  var isMyHostname = function(myHostname) {
+    var hostname = $(location).attr('hostname');
+    if(hostname === 'localhost'){
+      return true;
+    }
+    if(hostname === (myHostname || '')){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
+  var hostname = '{{ $hostname }}';
+  var redirectURL = '{{ .Site.BaseURL }}'
+
+  if(!isMyHostname(hostname)){
+    $(location).attr("href", redirectURL)
+  }
+})
+</script>

@@ -5,6 +5,7 @@
 
 <!-- Twitter 埋め込み用スクリプト 非同期読み込み -->
 <script>
+console.log("Twitter ajax");
 var cb = function() {
   var l=document.createElement('script');
   l.id="twitter-wjs";
@@ -25,7 +26,8 @@ if(tt.length){
 
 <!-- ビーコン画像の読み込み -->
 <script>
-var PERMALINK_URL = '{{ .Permalink | safeHTML }}'
+console.log("Beacon ajax");
+var PERMALINK_URL = '{{ .Permalink | safeHTML }}';
 var cb = function() {
   var l = document.createElement('img');
   l.src = '/buildin-resource/imgs/beacon.png?url='+PERMALINK_URL;
@@ -51,6 +53,18 @@ else window.addEventListener('load', cb);
 <!--
 同期型ライブラリの読み込みはここから
 -->
+
+<!-- table overflow scroll -->
+<script>
+$(document).ready(function(){
+  console.log('table async');
+  $elem = $('.js-single-content table');
+  $elem.addClass('table')
+       .addClass('table-striped')
+       .addClass('table-bordered');
+});
+</script>
+<!-- table overflow scroll END -->
 
 
 <!-- シェア数の取得 -->
@@ -93,6 +107,7 @@ function getTwitterCount(entryUrl, selcter) {
 }
 $(function(){
   var PERMALINK_URL = '{{ .Permalink | safeHTML }}'
+  console.log('share ajax');
   getHatenaBookmarkCount(PERMALINK_URL, '.js-sharebtn-count-hatebu');
   getFacebookCount(PERMALINK_URL, '.js-sharebtn-count-facebook');
   getTwitterCount(PERMALINK_URL, '.js-sharebtn-count-twitter');
@@ -131,41 +146,7 @@ $(function(){
 <!-- シェアボタン押済の表示 END -->
 
 
-{{ $hostname := replaceRE "^https?://([^/:]+).*(:[0-9]+)?/?$" "$1" .Site.BaseURL }}
-<script>
-  // 転載対策
-  $(function() {
-    var isMyHostname = function(myHostname) {
-      var hostname = $(location).attr('hostname');
-      if(hostname === 'localhost'){
-        return true;
-      }
-      if(hostname === (myHostname || '')){
-        return true;
-      }else{
-        return false;
-      }
-    }
-
-    var hostname = '{{ $hostname }}';
-    var redirectURL = '{{ .Site.BaseURL }}'
-
-    if(!isMyHostname(hostname)){
-      $(location).attr("href", redirectURL)
-    }
-  })
-</script>
-
-<!-- table overflow scroll -->
-<script>
-  $(function(){
-    $elem = $('.js-single-content table')
-    $elem.addClass('table')
-         .addClass('table-striped')
-         .addClass('table-bordered');
-  });
-</script>
-<!-- table overflow scroll END -->
+{{ partial "foot/redirect-mysite.html" . }}
 
 
 <!-- header のデコレーション -->
