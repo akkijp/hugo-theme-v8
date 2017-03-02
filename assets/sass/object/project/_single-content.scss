@@ -49,6 +49,9 @@
     background: #333;
     color: #fff;
     border-radius: 3px;
+    .anchorjs-link {
+      color: #eee;
+    }
   }
   h2:after {
     content: '';
