@@ -8,7 +8,8 @@
     margin-bottom: 10px;
     width: 100%;
     max-width: 100%;
-    float: left;
+    display: inline-block;
+    vertical-align: top;
     @media screen and (min-width: 599px){
       width: 49%;
 

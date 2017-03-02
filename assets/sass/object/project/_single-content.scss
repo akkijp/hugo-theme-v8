@@ -40,12 +40,25 @@
     border-bottom: 3px solid #dedede;
   }
   h2{
+    position: relative;
     margin-bottom: .5em;
     margin-top: 2.5em;
-    padding-bottom: .3em;
+    padding: 12px;
     font-size: 1.6em;
     line-height: 1.225;
-    border-bottom: 1px solid #dedede;
+    background: #333;
+    color: #fff;
+    border-radius: 3px;
+  }
+  h2:after {
+    content: '';
+    position: absolute;
+    border-top: 10px solid #333333;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    bottom: -9px;
+    left: 30px;
+    border-radius: 2px;
   }
   h3{
     margin-top: 3em;
