@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+.sc-link{
+  .sc-link--badge{
+    -webkit-font-smoothing: auto;
+    padding: 2px 5px;
+    margin-right: 5px;
+    margin-left: 1px;
+    font-size: 82%;
+    color: #fff;
+    background-color: #04b404;
+    border-radius: 6px;
+    box-shadow: 0 0 3px #ddd;
+    white-space: nowrap;
+  }
+  .fa{
+    font-size: 70%;
+  }
+}
