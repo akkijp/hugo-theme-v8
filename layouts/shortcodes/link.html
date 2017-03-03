@@ -1,5 +1,5 @@
-<p class="sc-link">
+<div class="sc-link">
   <span class="sc-link--badge">参考</span>
-  <a href="{{ .Get "href" }}">{{ with .Get "title"}}{{ . }}{{ else }}{{ .Get "href" }}{{ end }}</a>
+  <a href="{{ .Get "href" }}" target="_blank">{{ with .Get "title"}}{{ . }}{{ else }}{{ .Get "href" }}{{ end }}</a>
   <i class="fa fa-external-link" aria-hidden="true"></i>
-</p>
+</div>
