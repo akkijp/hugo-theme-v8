@@ -6,38 +6,38 @@
 <!-- Twitter 埋め込み用スクリプト 非同期読み込み -->
 <script>
 console.log("Twitter ajax");
-// var cb = function() {
-//   var l=document.createElement('script');
-//   l.id="twitter-wjs";
-//   l.async = 1;
-//   l.src="//platform.twitter.com/widgets.js";
-//   l.charset="utf-8";
-//   document.body.appendChild(l);
-// }
-// var tt = document.getElementsByClassName( "twitter-tweet" );
-// if(tt.length){
-//   var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-//       webkitRequestAnimationFrame || msRequestAnimationFrame;
-//   if (raf) raf(cb);
-//   else window.addEventListener('load', cb);
-// }
+var cb = function() {
+  var l=document.createElement('script');
+  l.id="twitter-wjs";
+  l.async = 1;
+  l.src="//platform.twitter.com/widgets.js";
+  l.charset="utf-8";
+  document.body.appendChild(l);
+}
+var tt = document.getElementsByClassName( "twitter-tweet" );
+if(tt.length){
+  var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+      webkitRequestAnimationFrame || msRequestAnimationFrame;
+  if (raf) raf(cb);
+  else window.addEventListener('load', cb);
+}
 </script>
 <!-- Twitter 埋め込み用スクリプト 非同期読み込み -->
 
 <!-- ビーコン画像の読み込み -->
 <script>
-// console.log("Beacon ajax");
-// var PERMALINK_URL = '{{ .Permalink | safeHTML }}';
-// var cb = function() {
-//   var l = document.createElement('img');
-//   l.src = '/buildin-resource/imgs/beacon.png?url='+PERMALINK_URL;
-//   l.style = "display:none;"
-//   document.body.appendChild(l);
-// };
-// var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-//     webkitRequestAnimationFrame || msRequestAnimationFrame;
-// if (raf) raf(cb);
-// else window.addEventListener('load', cb);
+console.log("Beacon ajax");
+var PERMALINK_URL = '{{ .Permalink | safeHTML }}';
+var cb = function() {
+  var l = document.createElement('img');
+  l.src = '/buildin-resource/imgs/beacon.png?url='+PERMALINK_URL;
+  l.style = "display:none;"
+  document.body.appendChild(l);
+};
+var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+    webkitRequestAnimationFrame || msRequestAnimationFrame;
+if (raf) raf(cb);
+else window.addEventListener('load', cb);
 </script>
 <!-- ビーコン画像の読み込み END -->
 
@@ -146,7 +146,7 @@ $(function(){
 <!-- シェアボタン押済の表示 END -->
 
 
-{{ partial "foot/redirect-mysite.html" . }}
+{{/* partial "foot/redirect-mysite.html" . */}}
 
 
 <!-- header のデコレーション -->
