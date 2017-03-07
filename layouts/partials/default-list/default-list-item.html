@@ -29,6 +29,9 @@
         {{ end }}
       </span>
       <time class="post__pubdate" itemprop="datePublished" datetime="{{ .Date }}">{{ .Date.Format "2006.01.02" }}</time>
+      <a href="http://b.hatena.ne.jp/entry/{{ .Permalink | safeHTML }}">
+       <img src="https://b.hatena.ne.jp/entry/image/{{ .Permalink | safeHTML }}" alt="はてなブックマーク - {{ .Title }}" title="はてなブックマーク - {{ .Title }}">
+      </a>
     </div>
   </header>
 </div>
