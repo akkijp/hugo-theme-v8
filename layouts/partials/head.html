@@ -77,3 +77,6 @@
 {{ range readDir "/static/assets/css" }}
 <link rel="stylesheet" href="/assets/css/{{ .Name | relURL }}?unix={{ $unix_time }}">
 {{ end }}
+
+
+{{ partial "plugin/head.html" . }}
